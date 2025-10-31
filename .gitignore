@@ -1,0 +1,6 @@
+# Ignore node_modules since all you have to do 
+# to install dependencies is write npm install
+node_modules
+
+# Ingore stupid hidden MacOS file that has no use to us
+.DS_Store

@@ -1,0 +1,8 @@
+body.metal-klubben {
+  background-color: black;
+  color: white;
+
+  a {
+    color: yellow;
+  }
+}

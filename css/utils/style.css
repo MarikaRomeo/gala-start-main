@@ -1,0 +1,15 @@
+@import './utils/setup-box-sizing.css';
+@import './pages/start-page.css';
+@import './pages/jazz-club.css';
+@import './pages/metal-club.css';
+
+body {
+  margin: 20px
+}
+
+.pet {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
