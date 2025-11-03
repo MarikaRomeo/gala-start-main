@@ -1,8 +1,11 @@
 body.riktiga-rockare {
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
+    background-image: url(../../img/background-rock-club.jpg);
+    background-color: rgba(0, 0, 0, 0.95);    
+    background-blend-mode:overlay;
     color: red;
 
     a{
-        color: black;
+        color: rgb(255, 255, 255);
     }
 }

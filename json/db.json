@@ -13,7 +13,8 @@
     {
       "id": "f8ed",
       "name": "Riktiga-Rockare",
-      "description": "En riktig klubb för rigtiga rockare >:U"
+      "description": "En riktig klubb för rigtiga rockare >:U",
+      "backgroundPath": "../img/background-rock-club.jpg"
     }
   ],
   "events": [
