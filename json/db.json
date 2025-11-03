@@ -9,6 +9,11 @@
       "id": "fg5i",
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
+    },
+    {
+      "id": "t3ch",
+      "name": "Techno-klubben",
+      "description": "Futuristisk techno-musik med hypnotiska beats och neonljus. Här dansar vi till morgonen!"
     }
   ],
   "events": [
@@ -32,6 +37,28 @@
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "t1ch",
+      "date": "2025-11-07 22:00",
+      "name": "BUNT Live",
+      "description": "Artisten BUNT tar över scenen med sina hypnotiska beats och futuristiska soundscapes.",
+      "image": "images/bunt-artist.jpg",
+      "clubId": "t3ch"
+    },
+    {
+      "id": "t2ch",
+      "date": "2025-11-09 23:00",
+      "name": "Neon Pulse",
+      "description": "Högenergi techno med lasershows och strobo-ljus. Dansa till du inte kan mer!",
+      "clubId": "t3ch"
+    },
+    {
+      "id": "t3ch",
+      "date": "2025-11-12 21:30",
+      "name": "Synthwave Night",
+      "description": "Retro-futuristisk synthwave med 80-tals nostalgi och moderna beats.",
+      "clubId": "t3ch"
     }
   ]
 }
