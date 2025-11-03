@@ -30,3 +30,24 @@ async function showTechno() {
   const club = clubs.find(c => c.id === 'a37c');
   const clubEvents = events.filter(e => e.clubId === 'a37c');
   document.body.className = 'club-techno';
+
+  const html = `
+    <h1>${escapeHTML(club.name)}</h1>
+    <p>${escapeHTML(club.description)}</p>
+  
+
+    <h2>Kommande evenemang</h2>
+  <div class ="events-grid">
+    ${clubEvents.map(e => `
+      <article class="event">
+        <h3>${escapeHTML(e.name)}</h3>
+      <time>${formatDate(e.date)}</time>
+      <p>${escapeHTML(e.description)}</p>
+      </article>
+    `).join('')}
+    </div>
+  `;
+  document.getElementById('app').innerHTML = html;
+}
+
+window.addEventListener('load', showTechno);
