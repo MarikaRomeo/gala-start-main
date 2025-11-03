@@ -18,6 +18,7 @@ export default async function clubInfoAndEvents(clubId) {
     <h1>${name}</h1>
     <p>${description}</p>
     <!-- <img src=${backgroundPath}> -->
+    <div>
     <h2>Events</h2>
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
@@ -29,5 +30,6 @@ export default async function clubInfoAndEvents(clubId) {
       `)
       .join('')
     }
+    </div>
   `;
 }
