@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("events-container");
 
-  fetch("http://localhost:3000/events")
+  fetch("http://localhost:3001/events")
     .then(response => response.json())
     .then(data => {
-      data.events.forEach(event => {
+      // Εδώ τα data είναι ήδη λίστα, όχι αντικείμενο με "events"
+      if (!Array.isArray(data) || data.length === 0) {
+        container.innerHTML = "<p>No events available right now.</p>";
+        return;
+      }
+
+      data.forEach(event => {
         const eventDiv = document.createElement("div");
         eventDiv.classList.add("event-card");
 
