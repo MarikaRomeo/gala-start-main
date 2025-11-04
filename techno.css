@@ -82,6 +82,136 @@ time {
   transform: scale(1.02);
 }
 
+.book-ticket-btn {
+  background: linear-gradient(45deg, #0ff, #00cccc);
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #0ff4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.book-ticket-btn:hover {
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+  box-shadow: 0 0 25px #0ff8;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.book-ticket-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Artist-specifika neonfärger */
+.artist-bunt {
+  border-left: 4px solid #ffff00;
+  box-shadow: 0 0 10px #ffff0044;
+}
+
+.artist-bunt h3 {
+  color: #ffff00;
+  text-shadow: 0 0 10px #ffff00;
+}
+
+.artist-bunt:hover {
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.artist-bunt .event-image {
+  border: 2px solid #ffff00;
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.artist-bunt .event-image:hover {
+  box-shadow: 0 0 25px #ffff0088;
+}
+
+.artist-bunt .book-ticket-btn {
+  background: linear-gradient(45deg, #ffff00, #ffcc00);
+  color: #000;
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.artist-bunt .book-ticket-btn:hover {
+  background: linear-gradient(45deg, #ffff44, #ffdd44);
+  box-shadow: 0 0 25px #ffff0088;
+}
+
+.artist-fred {
+  border-left: 4px solid #00ff00;
+  box-shadow: 0 0 10px #00ff0044;
+}
+
+.artist-fred h3 {
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.artist-fred:hover {
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+.artist-fred .event-image {
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+.artist-fred .event-image:hover {
+  box-shadow: 0 0 25px #00ff0088;
+}
+
+.artist-fred .book-ticket-btn {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  color: #000;
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+.artist-fred .book-ticket-btn:hover {
+  background: linear-gradient(45deg, #44ff44, #44dd44);
+  box-shadow: 0 0 25px #00ff0088;
+}
+
+.artist-daft {
+  border-left: 4px solid #ff00ff;
+  box-shadow: 0 0 10px #ff00ff44;
+}
+
+.artist-daft h3 {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+.artist-daft:hover {
+  box-shadow: 0 0 15px #ff00ff66;
+}
+
+.artist-daft .event-image {
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 15px #ff00ff66;
+}
+
+.artist-daft .event-image:hover {
+  box-shadow: 0 0 25px #ff00ff88;
+}
+
+.artist-daft .book-ticket-btn {
+  background: linear-gradient(45deg, #ff00ff, #cc00cc);
+  color: #fff;
+  box-shadow: 0 0 15px #ff00ff66;
+}
+
+.artist-daft .book-ticket-btn:hover {
+  background: linear-gradient(45deg, #ff44ff, #dd44dd);
+  box-shadow: 0 0 25px #ff00ff88;
+}
+
 /* Glow-effekt för text */
 .glow {
   color: #0ff;

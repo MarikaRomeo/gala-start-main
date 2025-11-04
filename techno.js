@@ -23,6 +23,15 @@ const escapeHTML = str =>
     .replace(/'/g, "&#39;");
 const formatDate = d => new Date(d).toLocaleString('sv-SE');
 
+// Funktion för att få artist-specifik CSS-klass
+function getArtistClass(eventName) {
+  const name = eventName.toLowerCase();
+  if (name.includes('bunt')) return 'artist-bunt';
+  if (name.includes('fred again')) return 'artist-fred';
+  if (name.includes('daft punk')) return 'artist-daft';
+  return 'artist-default';
+}
+
 //här visas datan på sidan club techno
 async function showTechno() {
   const clubs = await getData('clubs');
@@ -40,17 +49,28 @@ async function showTechno() {
       <h2>Kommande evenemang</h2>
     <div class ="events-grid">
       ${clubEvents.map(e => `
-        <article class="event">
+        <article class="event ${getArtistClass(e.name)}">
           <h3>${escapeHTML(e.name)}</h3>
           ${e.image ? `<img src="${escapeHTML(e.image)}" alt="${escapeHTML(e.name)}" class="event-image">` : ''}
         <time>${formatDate(e.date)}</time>
         <p>${escapeHTML(e.description)}</p>
+        <button class="book-ticket-btn" onclick="bookTicket('${e.id}', '${escapeHTML(e.name)}')">
+          🎫 Boka Biljett
+        </button>
         </article>
       `).join('')}
       </div>
     </div>
   `;
   document.getElementById('app').innerHTML = html;
+}
+
+// Funktion för att boka biljetter
+function bookTicket(eventId, eventName) {
+  alert(`🎫 Biljett bokad för "${eventName}"!\n\nDin bokning är bekräftad. Vi ses på eventet!`);
+
+  // Här kan du senare lägga till riktigt bokningssystem
+  console.log(`Biljett bokad för event ID: ${eventId}, Event: ${eventName}`);
 }
 
 window.addEventListener('load', showTechno);
