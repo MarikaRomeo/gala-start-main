@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Grekisk musiknatt",
+      "date": "2025-11-20",
+      "image": "images/event1.jpg",
+      "description": "En kväll fylld med grekisk musik och dans.",
+      "club": "Greek Club"
+    },
+    {
+      "id": 2,
+      "title": "Sirtaki och bouzouki",
+      "date": "2025-12-05",
+      "image": "images/event2.jpg",
+      "description": "Traditionell sirtaki dans med levande bouzouki-band.",
+      "club": "Greek Club"
+    },
+    {
+      "id": 3,
+      "title": "Grekisk mat och melodi",
+      "date": "2026-01-10",
+      "image": "images/event3.jpg",
+      "description": "Smaker och musik från Grekland i en unik kvällsupplevelse.",
+      "club": "Greek Club"
+    }
+  ]
+}
