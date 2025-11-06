@@ -45,7 +45,7 @@ async function showTechno() {
       <h1>${escapeHTML(club.name)}</h1>
       <p>${escapeHTML(club.description)}</p>
     
-
+      // här visas kommande event för techno
       <h2>Kommande evenemang</h2>
     <div class ="events-grid">
       ${clubEvents.map(e => `
@@ -55,7 +55,7 @@ async function showTechno() {
         <time>${formatDate(e.date)}</time>
         <p>${escapeHTML(e.description)}</p>
         <button class="book-ticket-btn" onclick="bookTicket('${e.id}', '${escapeHTML(e.name)}')">
-          🎫 Boka Biljett
+           Boka Biljett
         </button>
         </article>
       `).join('')}
@@ -69,7 +69,6 @@ async function showTechno() {
 function bookTicket(eventId, eventName) {
   alert(`🎫 Biljett bokad för "${eventName}"!\n\nDin bokning är bekräftad. Vi ses på eventet!`);
 
-  // Här kan du senare lägga till riktigt bokningssystem
   console.log(`Biljett bokad för event ID: ${eventId}, Event: ${eventName}`);
 }
 
