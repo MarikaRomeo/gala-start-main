@@ -1,0 +1,8 @@
+body.start {
+  background-color: #050e0a;
+  color: #222;
+
+  a {
+    color: blue;
+  }
+}

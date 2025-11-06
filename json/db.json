@@ -9,6 +9,11 @@
       "id": "fg5i",
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
+    },
+    {
+      "id": "5cc6",
+      "name": "Country-klubben",
+      "description": "Countrymusik för att läka själen."
     }
   ],
   "events": [

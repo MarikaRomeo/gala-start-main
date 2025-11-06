@@ -2,6 +2,7 @@
 @import './pages/start-page.css';
 @import './pages/jazz-club.css';
 @import './pages/metal-club.css';
+@import './pages/country-club.css';
 
 body {
   margin: 20px
