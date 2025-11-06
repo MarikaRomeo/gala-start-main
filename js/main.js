@@ -7,7 +7,7 @@ import metalClub from './pages/metal-club.js';
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub }
+  "metal-klubben": { label: 'Metal-klubben', function: metalClub } 
 };
 
 function createMenu() {
