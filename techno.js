@@ -15,12 +15,7 @@ async function getData(type) {
   }
 }
 
-const escapeHTML = str =>
-  str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+
 const formatDate = d => new Date(d).toLocaleString('sv-SE');
 
 // Funktion för att få artist-specifik CSS-klass
@@ -40,24 +35,25 @@ async function showTechno() {
   const clubEvents = events.filter(e => e.clubId === 't3ch');
   document.body.className = 'club-techcno';
 
+  //här skapas knappen för back till main samt evenemangslistan
   const html = `
     <div class="card">
       <button class="back-to-main-btn" onclick="goToMainPage()">
         ← Tillbaka till huvudsidan
       </button>
-      <h1>${escapeHTML(club.name)}</h1>
-      <p>${escapeHTML(club.description)}</p>
-    
-      // här visas kommande event för techno
+      <h1>${club.name}</h1>
+      <p>${club.description}</p>
+
+
       <h2>Kommande evenemang</h2>
     <div class ="events-grid">
       ${clubEvents.map(e => `
         <article class="event ${getArtistClass(e.name)}">
-          <h3>${escapeHTML(e.name)}</h3>
-          ${e.image ? `<img src="${escapeHTML(e.image)}" alt="${escapeHTML(e.name)}" class="event-image">` : ''}
+          <h3>${e.name}</h3>
+          ${e.image ? `<img src="${e.image}" alt="${e.name}" class="event-image">` : ''}
         <time>${formatDate(e.date)}</time>
-        <p>${escapeHTML(e.description)}</p>
-        <button class="book-ticket-btn" onclick="bookTicket('${e.id}', '${escapeHTML(e.name)}')">
+        <p>${e.description}</p>
+        <button class="book-ticket-btn" onclick="bookTicket('${e.id}', '${e.name}')">
            Boka Biljett
         </button>
         </article>
