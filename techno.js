@@ -42,6 +42,9 @@ async function showTechno() {
 
   const html = `
     <div class="card">
+      <button class="back-to-main-btn" onclick="goToMainPage()">
+        ← Tillbaka till huvudsidan
+      </button>
       <h1>${escapeHTML(club.name)}</h1>
       <p>${escapeHTML(club.description)}</p>
     
@@ -70,6 +73,11 @@ function bookTicket(eventId, eventName) {
   alert(`🎫 Biljett bokad för "${eventName}"!\n\nDin bokning är bekräftad. Vi ses på eventet!`);
 
   console.log(`Biljett bokad för event ID: ${eventId}, Event: ${eventName}`);
+}
+
+// Funktion för att gå tillbaka till huvudsidan
+function goToMainPage() {
+  window.location.href = 'index.html';
 }
 
 window.addEventListener('load', showTechno);
