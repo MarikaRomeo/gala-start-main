@@ -1,0 +1,36 @@
+body {
+  font-family: 'Open Sans', Arial, sans-serif; 
+  background-color: #f0f8ff; 
+  color: #333; 
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #003366; 
+  color: white; 
+  text-align: center; 
+  padding: 20px 0; 
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+nav {
+  background-color: #00264d; 
+  padding: 10px 0;
+}
+
+nav a {
+  color: #e0f0ff; 
+  text-decoration: none; 
+  margin: 0 15px; 
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease; 
+}
+
+nav a:hover {
+  color: #ffd700; 
+}
