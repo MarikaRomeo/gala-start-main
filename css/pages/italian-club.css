@@ -1,0 +1,62 @@
+
+
+body {
+    margin: 0;
+    background-color: #002244;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Titolo in stile "Lavish" */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: white;
+    margin-top: 40px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-weight: 300;
+    font-style: italic;
+    color: #cce0ff;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.club {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width: 45%;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.club:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+h4 {
+    font-style: italic;
+    color: #cce0ff;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .club {
+        width: 90%;
+    }
+}
