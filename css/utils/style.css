@@ -1,7 +1,8 @@
-@import './utils/setup-box-sizing.css';
-@import './pages/start-page.css';
-@import './pages/jazz-club.css';
-@import './pages/metal-club.css';
+@import '../utils/setup-box-sizing.css';
+@import '../pages/start-page.css';
+@import '../pages/jazz-club.css';
+@import '../pages/metal-club.css';
+@import '../pages/rock-club.css';
 
 body {
   margin: 20px
