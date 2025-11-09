@@ -63,5 +63,15 @@
       "image": "images/daft-punk.jpg",
       "clubId": "t3ch"
     }
+  ],
+  "bookings": [
+    {
+      "id": "fa02",
+      "name": "test",
+      "email": "marika.romeo@hotmail.com",
+      "tickets": 1,
+      "event": "Tribute Band Zucchero – 10 December 20:00",
+      "createdAt": "2025-11-09T21:42:58.876Z"
+    }
   ]
 }
