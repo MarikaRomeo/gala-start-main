@@ -1,13 +1,14 @@
 export default async function clubInfoAndEvents(clubId) {
-  let name = '', description = '';
+  let name = '', description = '', backgroundPath = '';
   // if there is a clubId -> fetch the info about the club
   // and calculate the correct url for fetching filtered events
   let url = 'http://localhost:3000/events';
   if (clubId) {
-    const { name: clubName, description: clubDescription } =
+    const { name: clubName, description: clubDescription, backgroundPath: clubBackground} =
       await (await fetch('http://localhost:3000/clubs/' + clubId)).json();
     name = clubName;
     description = clubDescription;
+    backgroundPath = clubBackground;
     url += '?clubId=' + clubId;
   }
   const events =
@@ -16,6 +17,8 @@ export default async function clubInfoAndEvents(clubId) {
   return `
     <h1>${name}</h1>
     <p>${description}</p>
+    <!-- <img src=${backgroundPath}> -->
+    <div>
     <h2>Events</h2>
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
@@ -27,5 +30,6 @@ export default async function clubInfoAndEvents(clubId) {
       `)
       .join('')
     }
+    </div>
   `;
 }
