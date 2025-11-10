@@ -1,15 +1,106 @@
-@import './utils/setup-box-sizing.css';
-@import './pages/start-page.css';
-@import './pages/jazz-club.css';
-@import './pages/metal-club.css';
-
-body {
-  margin: 20px
+/* ====== Global reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.pet {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px 20px;
-  margin-bottom: 20px;
+/* ====== Base style ====== */
+html, body {
+  font-family: 'Poppins', sans-serif;
+  color: #f2f2f2;
+  background: radial-gradient(circle at top, #1b1b1b 0%, #0d0d0d 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ====== Headings ====== */
+h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+/* ====== Header / Nav ====== */
+header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #ffcc33;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #ffcc33;
+  color: #111;
+  transform: scale(1.05);
+}
+
+/* ====== Main content ====== */
+main {
+  flex: 1;
+  max-width: 800px;
+  padding: 2rem;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+/* ====== Footer ====== */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  main {
+    padding: 1.2rem;
+  }
 }

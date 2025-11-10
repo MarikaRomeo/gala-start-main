@@ -9,6 +9,12 @@
       "id": "fg5i",
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
+    },
+    {
+      "id": "t3ch",
+      "name": "Techno-klubben",
+      "description": "Välkommen till Techno-klubben, här bokar vi endast in världens bästa Dj's. Checka in våra kommande evenemang och köp biljetter innan de tar slut!",
+      "backgroundPath": "../img/background-rock-club.jpg"
     }
   ],
   "events": [
@@ -32,6 +38,40 @@
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "t1ch",
+      "date": "2025-11-07 22:00",
+      "name": "BUNT Live",
+      "description": "Artisten BUNT tar över scenen med sina hypnotiska beats och futuristiska soundscapes.",
+      "image": "images/bunt-artist.jpg",
+      "clubId": "t3ch"
+    },
+    {
+      "id": "t2ch",
+      "date": "2025-11-09 23:00",
+      "name": "Fred Again",
+      "description": "Den världsberömda DJ:n Fred Again kommer till Techno-klubben för en oförglömlig natt fylld med pulserande beats och energiska rytmer.",
+      "image": "images/fred-again.jpg",
+      "clubId": "t3ch"
+    },
+    {
+      "id": "t3ch",
+      "date": "2025-11-12 21:30",
+      "name": "Daft Punk",
+      "description": "Den legendariska duon Daft Punk återvänder till Techno-klubben för en spektakulär kväll med deras ikoniska elektroniska sound och visuella shower.",
+      "image": "images/daft-punk.jpg",
+      "clubId": "t3ch"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "fa02",
+      "name": "test",
+      "email": "marika.romeo@hotmail.com",
+      "tickets": 1,
+      "event": "Tribute Band Zucchero – 10 December 20:00",
+      "createdAt": "2025-11-09T21:42:58.876Z"
     }
   ]
 }
