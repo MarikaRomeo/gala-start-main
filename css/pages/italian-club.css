@@ -1,235 +1,198 @@
-body {
-    margin: 0;
-    background-color: #002244;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Titolo in stile "Lavish" */
+/* ====== BASE ====== */
+body {
+  margin: 0;
+  background-color: #0b2d26; /* verde scuro profondo */
+  color: #fffdf8;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ====== TITOLI ====== */
 h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3em;
-    color: white;
-    margin-top: 40px;
-    letter-spacing: 1px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  color: #ffdae0; /* rosa antico tenue */
+  margin-top: 40px;
+  letter-spacing: 1px;
 }
 
 h2 {
-    font-weight: 300;
-    font-style: italic;
-    color: #cce0ff;
+  font-weight: 300;
+  font-style: italic;
+  color: #e8d6d1; /* beige rosato */
 }
 
+/* ====== NAV ====== */
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
 }
+
+nav a {
+  color: #ffdae0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 218, 224, 0.2);
+  color: #fff;
+}
+
 
 .club {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    width: 45%;
-    padding: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  background-color: rgba(199, 82, 102, 0.15); /* rosa antico trasparente */
+  border: 1px solid rgba(255, 218, 224, 0.25);
+  border-radius: 15px;
+  width: 45%;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .club:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
+  background-color: rgba(255, 218, 224, 0.25);
+  transform: translateY(-5px);
 }
 
 h4 {
-    font-style: italic;
-    color: #cce0ff;
+  font-style: italic;
+  color: #e8d6d1;
 }
 
 img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
+/* ====== Pulsanti Prenotazione ====== */
 .book-btn {
-
-    margin-top: 16px;
-
-    padding: 12px 28px;
-
-    border: none;
-
-    border-radius: 999px;
-
-    background: linear-gradient(135deg, #ff914d, #ffb347);
-
-    color: #002244;
-
-    font-weight: 600;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-
+  margin-top: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffb5c0, #ffd6cc);
+  color: #0b2d26;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Booking window */
+.book-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 218, 224, 0.4);
+}
 
+/* ====== Booking Page ====== */
 body.booking-page {
-
-    margin: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 40px 16px;
-
-    background-color: #002244;
-
-    color: white;
-
-    font-family: 'Poppins', sans-serif;
-
-    text-align: center;
-
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background-color: #0b2d26;
+  color: #fffdf8;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
-
 
 .booking-card {
-
-    width: 100%;
-
-    max-width: 460px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    border-radius: 18px;
-
-    padding: 32px 28px;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-
-    backdrop-filter: blur(6px);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255, 218, 224, 0.08);
+  border-radius: 18px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 218, 224, 0.2);
 }
-
 
 .booking-card h1 {
-
-    margin-top: 0;
-
-    margin-bottom: 16px;
-
-    font-size: 2.2em;
-
-    font-family: 'Great Vibes', cursive;
-
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 2.2em;
+  font-family: 'Great Vibes', cursive;
+  color: #ffdae0;
 }
 
-
+/* ====== Booking Form ====== */
 .booking-form {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-
-    align-items: center;
-
-    text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  text-align: center;
 }
-
 
 .booking-form label {
-
-    font-weight: 400;
-
-    color: #cce0ff;
-
-    font-size: 0.95rem;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
+  font-weight: 400;
+  color: #e8d6d1;
+  font-size: 0.95rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .booking-form input {
-
-    width: 100%;
-
-    max-width: 30rem;
-
-    margin-top: 6px;
-
-    padding: 12px 14px;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(255, 255, 255, 0.4);
-
-    background-color: rgba(255, 255, 255, 0.08);
-
-    color: white;
-
-    font-size: 1rem;
-
+  width: 100%;
+  max-width: 30rem;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 218, 224, 0.4);
+  background-color: rgba(255, 218, 224, 0.08);
+  color: #fffdf8;
+  font-size: 1rem;
 }
-
 
 .booking-submit {
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 999px;
-
-    background: linear-gradient(135deg, #ff914d, #ffb347);
-
-    color: #002244;
-
-    font-weight: 600;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffb5c0, #ffd6cc);
+  color: #0b2d26;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.booking-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 218, 224, 0.4);
+}
 
 .booking-error {
-
-    min-height: 1.2em;
-
-    font-size: 0.9rem;
-
-    color: #ffd2d2;
-
+  min-height: 1.2em;
+  font-size: 0.9rem;
+  color: #ffcccc;
 }
 
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-    .club {
-        width: 90%;
-    }
+  .club {
+    width: 90%;
+  }
+
+  nav {
+    padding: 20px;
+    gap: 10px;
+  }
 }
