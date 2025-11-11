@@ -1,5 +1,10 @@
 export default async function createClub() {
   return `
+    <h2>Skapa event</h2>
+    <form>
+      <input type="text" name="event-name" placeholder="Eventnamn">
+    </form>
+
     <h2>Skapa en klubb</h2>
     <form id="create-club">
       <input type="text" name="name" placeholder="Klubbnamn">
@@ -7,6 +12,12 @@ export default async function createClub() {
       <input type="submit" value="Skapa">
     </form>
   `;
+}
+
+async function listClubs(){
+  const clubsInDB = await (await fetch('http://localhost:3000/clubs', {method: 'GET'})).json();
+  //const clubsData = await clubsInDB.json();
+  const simplified = clubsInDB.map(({ id, name}) => {id: clubID; name: clubName})
 }
 
 async function submitForm(event) {
