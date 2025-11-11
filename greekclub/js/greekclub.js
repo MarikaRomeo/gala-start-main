@@ -15,11 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         eventDiv.classList.add("event-card");
 
         eventDiv.innerHTML = `
-          <img src="${event.image}" alt="${event.title}">
-          <h2>${event.title}</h2>
-          <p><strong>Date:</strong> ${event.date}</p>
-          <p>${event.description}</p>
-        `;
+  <img src="${event.image}" alt="${event.title}">
+  <h2>${event.title}</h2>
+  <p><strong>Datum:</strong> ${event.date}</p>
+  <p><strong>Tid:</strong> ${event.startTime}</p>
+  <p><strong>Plats:</strong> ${event.location}</p>
+  <p><strong>Pris:</strong> ${event.price}</p>
+  <p>${event.description}</p>
+`;
+
 
         container.appendChild(eventDiv);
       });
