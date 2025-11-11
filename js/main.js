@@ -9,7 +9,12 @@ import rockClub from './pages/rock-club.js';
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
+<<<<<<< HEAD
+  "metal-klubben": { label: 'Metal-klubben', function: metalClub } 
+=======
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
+  "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub}
+>>>>>>> 3795c42bc4357138e5c59078d81d9936a81acc00
   "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub},
   "Country-klubben": {label: 'Country-klubben', function: countryClub}
 };
