@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("events-container");
 
-  fetch("http://localhost:3001/events")
+  fetch("./json/events.json")
     .then(response => response.json())
     .then(data => {
-      data.forEach(event => {
+      data.events.forEach(event => {
         const eventDiv = document.createElement("div");
         eventDiv.classList.add("event-card");
 
