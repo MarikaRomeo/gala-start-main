@@ -1,0 +1,264 @@
+/* === Techcno Klubbdesign === */
+body.club-techcno {
+  background-color: #050505;
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+
+
+.card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #0ff;
+  box-shadow: 0 0 15px #0ff6;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  width: 90%;
+  animation: fadeIn 1s ease;
+}
+
+h1,
+h2,
+h3 {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+p,
+time,
+small {
+  line-height: 1.6;
+}
+
+.events-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.event {
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #0ff;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.event:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px #0ff4;
+}
+
+time {
+  display: block;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-image {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #0ff3;
+  transition: all 0.3s ease;
+}
+
+.event-image:hover {
+  box-shadow: 0 0 25px #0ff6;
+  transform: scale(1.02);
+}
+
+.book-ticket-btn {
+  background: linear-gradient(45deg, #0ff, #00cccc);
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #0ff4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.book-ticket-btn:hover {
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+  box-shadow: 0 0 25px #0ff8;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.book-ticket-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.back-to-main-btn {
+  background: rgba(0, 255, 255, 0.1);
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #0ff4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  float: right;
+}
+
+.back-to-main-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 20px #0ff6;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.back-to-main-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Artist-specifika neonfärger */
+.artist-bunt {
+  border-left: 4px solid #ffff00;
+  box-shadow: 0 0 10px #ffff0044;
+}
+
+.artist-bunt h3 {
+  color: #ffff00;
+  text-shadow: 0 0 10px #ffff00;
+}
+
+.artist-bunt:hover {
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.artist-bunt .event-image {
+  border: 2px solid #ffff00;
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.artist-bunt .event-image:hover {
+  box-shadow: 0 0 25px #ffff0088;
+}
+
+.artist-bunt .book-ticket-btn {
+  background: linear-gradient(45deg, #ffff00, #ffcc00);
+  color: #000;
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.artist-bunt .book-ticket-btn:hover {
+  background: linear-gradient(45deg, #ffff44, #ffdd44);
+  box-shadow: 0 0 25px #ffff0088;
+}
+
+.artist-fred {
+  border-left: 4px solid #00ff00;
+  box-shadow: 0 0 10px #00ff0044;
+}
+
+.artist-fred h3 {
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.artist-fred:hover {
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+.artist-fred .event-image {
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+.artist-fred .event-image:hover {
+  box-shadow: 0 0 25px #00ff0088;
+}
+
+.artist-fred .book-ticket-btn {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  color: #000;
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+.artist-fred .book-ticket-btn:hover {
+  background: linear-gradient(45deg, #44ff44, #44dd44);
+  box-shadow: 0 0 25px #00ff0088;
+}
+
+.artist-daft {
+  border-left: 4px solid #ff00ff;
+  box-shadow: 0 0 10px #ff00ff44;
+}
+
+.artist-daft h3 {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+.artist-daft:hover {
+  box-shadow: 0 0 15px #ff00ff66;
+}
+
+.artist-daft .event-image {
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 15px #ff00ff66;
+}
+
+.artist-daft .event-image:hover {
+  box-shadow: 0 0 25px #ff00ff88;
+}
+
+.artist-daft .book-ticket-btn {
+  background: linear-gradient(45deg, #ff00ff, #cc00cc);
+  color: #fff;
+  box-shadow: 0 0 15px #ff00ff66;
+}
+
+.artist-daft .book-ticket-btn:hover {
+  background: linear-gradient(45deg, #ff44ff, #dd44dd);
+  box-shadow: 0 0 25px #ff00ff88;
+}
+
+/* Glow-effekt för text */
+.glow {
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+}
+
+/* Enkel fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
