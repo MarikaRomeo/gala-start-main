@@ -6,49 +6,57 @@ import rockClub from './pages/rock-club.js';
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
-const menu = {
-  "start": { label: 'Start', function: start },
-  "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-<<<<<<< HEAD
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub } 
-=======
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub}
->>>>>>> 3795c42bc4357138e5c59078d81d9936a81acc00
-  "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub},
-  "Country-klubben": {label: 'Country-klubben', function: countryClub}
-};
+// const menu = {
+//   "start": { label: 'Start', function: start },
+//   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
+//   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
+//   "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub}
+//   "Country-klubben": {label: 'Country-klubben', function: countryClub}
+// };
 
-function createMenu() {
-  // Object.entries -> convert object to array
-  // then map to create a-tags (links)
-  // then join everything into one big string
-  console.log(JSON.stringify(menu))
-  return Object.entries(menu)
-    .map(([urlHash, { label }]) => `
-      <a href="#${urlHash}">${label}</a>
-    `)
-    .join('');
+// function createMenu() {
+//   // Object.entries -> convert object to array
+//   // then map to create a-tags (links)
+//   // then join everything into one big string
+//   console.log(JSON.stringify(menu))
+//   return Object.entries(menu)
+//     .map(([urlHash, { label }]) => `
+//       <a href="#${urlHash}">${label}</a>
+//     `)
+//     .join('');
+// }
+
+//lösning för att få min navigeringslänk att fungera
+document.getElementById("goToCountryClub").addEventListener("click", async function(event) {
+  event.preventDefault()
+  await goToCountryClub()
+})
+
+
+async function goToCountryClub(){
+  const html = await countryClub();
+  document.querySelector('body').innerHTML = html;
 }
 
-async function loadPageContent() {
-  // if no hash redirect to #start
-  if (location.hash === '') { location.replace('#start'); }
-  // add a class on body so that we can style differnt pages differently
-  document.body.setAttribute('class', location.hash.slice(1));
-  // get the correct function to run depending on location.hash
-  const functionToRun = menu[location.hash.slice(1)].function;
-  // run the function and expect it return a html string
-  const html = await functionToRun();
-  // replace the contents of the main element
-  document.querySelector('main').innerHTML = html;
-}
+// async function loadPageContent() {
+//   // if no hash redirect to #start
+//   if (location.hash === '') { location.replace('#start'); }
+//   // add a class on body so that we can style differnt pages differently
+//   document.body.setAttribute('class', location.hash.slice(1));
+//   // get the correct function to run depending on location.hash
+//   const functionToRun = menu[location.hash.slice(1)].function;
+//   // run the function and expect it return a html string
+//   const html = await functionToRun();
+//   // replace the contents of the main element
+//   document.querySelector('main').innerHTML = html;
+// }
 
-// call loadPageContent once on page load
-loadPageContent();
+// // call loadPageContent once on page load
+// loadPageContent();
 
-// and then on every hash change of the url/location
-window.onhashchange = loadPageContent;
+// // and then on every hash change of the url/location
+// window.onhashchange = loadPageContent;
 
-// create the menu and display it
-document.querySelector('header nav').innerHTML = createMenu();
+// // create the menu and display it
+// document.querySelector('header nav').innerHTML = createMenu();
+

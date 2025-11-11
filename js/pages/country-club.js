@@ -10,13 +10,13 @@ export default async function countryClub() {
   const doc = parser.parseFromString(countryClubHtmlString, "text/html");
   console.log(doc);
   //Sparar innehållet från det elementet som använder klassen .eventSidebar i doc
-  const eventSidebar = doc.querySelector('.eventSidebar');
-  console.log(eventSidebar);
+  const eventContent = doc.querySelector('.eventContent');
+  console.log(eventContent);
   
-  if(!eventSidebar){
-    throw new Error ("EventSidebar could not load!")
+  if(!eventContent){
+    throw new Error ("eventContent could not load!")
   }
-  eventSidebar.innerHTML = eventHtml;
+  eventContent.innerHTML = eventHtml;
 
   return doc.documentElement.outerHTML;
 }
@@ -31,7 +31,6 @@ async function clubEvents(clubId) {
   // return html 
   return `
     <div>
-    <h2 class="eventMenu">Events</h2>
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ date, name, description }) => `
@@ -45,3 +44,9 @@ async function clubEvents(clubId) {
     </div>
   `;
 }
+
+// document.getElementById("backToMainBtn").addEventListener("click", function(event) {
+//   event.preventDefault()
+//   window.location.href = 'index.html';
+// })
+
