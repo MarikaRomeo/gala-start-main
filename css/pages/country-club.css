@@ -1,0 +1,142 @@
+body.Country-klubben {
+    background-image: url(../../img/background-country-club.png);
+}
+
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 10px;
+    font-weight: 17px;
+    font-family: sans-serif;
+    flex: 1;
+}
+
+.container>div{
+    flex: 100;
+}
+
+.subContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: row-reverse;
+}
+
+.eventSidebar{
+    flex: 1;
+}
+
+.mainContainer{
+    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.mainContainer>div{
+    flex: 100%;
+}
+
+h4{
+    padding: 10px;
+    text-align: center;
+}
+
+.main2{
+    min-height: 250px;
+    flex-direction: column;
+}
+
+.headMenu{  
+    font-family: 'Georgia', serif; 
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    color: #4b2e1e; 
+    padding: 4px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    flex: 1;
+}
+
+.headText{
+    font-family: 'Georgia', serif; 
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #100a08; 
+    padding: 4px;
+    letter-spacing: 1px;
+    flex: 2;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;   
+}
+
+.artists{
+    flex: 100%;
+    min-height: 50px;
+    font-family: 'Georgia', serif; 
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #4b2e1e; 
+    padding: 4px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.content1, .content2, .content3{
+    flex: 1;
+    min-height: 200px;
+    border: 2px solid black;
+}
+
+.content1{
+    background: url(../../img/gareth-country-club.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+
+.footer{
+    flex: 100%;
+    min-height: 50px;
+}
+
+.sidebar, .main2, content>div{
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.eventMenu{
+    text-align: center;
+}
+
+.event {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.contenth4{
+    font-family: 'Georgia', serif; 
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #4b2e1e; 
+    padding: 4px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}

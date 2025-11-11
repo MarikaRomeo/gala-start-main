@@ -1,6 +1,7 @@
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
+import countryClub from './pages/country-club.js';
 import rockClub from './pages/rock-club.js';
 
 // Our menu: label to display in menu and 
@@ -14,12 +15,15 @@ const menu = {
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
   "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub}
 >>>>>>> 3795c42bc4357138e5c59078d81d9936a81acc00
+  "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub},
+  "Country-klubben": {label: 'Country-klubben', function: countryClub}
 };
 
 function createMenu() {
   // Object.entries -> convert object to array
   // then map to create a-tags (links)
   // then join everything into one big string
+  console.log(JSON.stringify(menu))
   return Object.entries(menu)
     .map(([urlHash, { label }]) => `
       <a href="#${urlHash}">${label}</a>

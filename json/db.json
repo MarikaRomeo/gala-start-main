@@ -11,6 +11,11 @@
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
     },
     {
+      "id": "5cc6",
+      "name": "Country-klubben",
+      "description": "Countrymusik för att läka själen."
+    },
+    {
       "id": "t3ch",
       "name": "Techno-klubben",
       "description": "Välkommen till Techno-klubben, här bokar vi endast in världens bästa Dj's. Checka in våra kommande evenemang och köp biljetter innan de tar slut!",
@@ -38,6 +43,20 @@
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "67ui",
+      "date": "2025-11-14 21:00",
+      "name": "Los Banditos",
+      "description": "Country kväll",
+      "clubId": "5cc6"
+    },
+    {
+      "id": "65ui",
+      "date": "2025-11-16 21:00",
+      "name": "Los Banditos2",
+      "description": "Country kvällar",
+      "clubId": "5cc6"
     },
     {
       "id": "t1ch",

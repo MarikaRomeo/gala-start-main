@@ -1,3 +1,20 @@
+@import '/css/utils/setup-box-sizing.css';
+@import '/css/pages/country-club.css';
+@import '/css/pages/jazz-club.css';
+@import '/css/pages/metal-club.css';
+@import '/css/pages/rock-club.css';
+@import '/css/pages/start-page.css';
+
+body {
+  margin: 20px
+}
+
+.pet {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
 /* ====== Global reset ====== */
 * {
   margin: 0;
