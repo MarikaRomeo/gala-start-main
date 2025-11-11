@@ -21,8 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
   <p><strong>Tid:</strong> ${event.startTime}</p>
   <p><strong>Plats:</strong> ${event.location}</p>
   <p><strong>Pris:</strong> ${event.price}</p>
-  <p>${event.description}</p>
+  <p>${event.description}</p><button class="book-btn">Boka biljett</button>
 `;
+
+const bookButton = eventDiv.querySelector(".book-btn");
+
+bookButton.addEventListener("click", () => {
+  alert(`Du har bokat en biljett till: ${event.title}`);
+});
+
 
 
         container.appendChild(eventDiv);
