@@ -94,3 +94,33 @@ nav a:hover {
   background-color: #0055aa;
 }
 
+.booking-form {
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.confirm-btn {
+  background-color: #0055aa;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #0077cc;
+}
+
