@@ -1,8 +1,76 @@
-body.start {
-  background-color: #050e0a;
-  color: #222;
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  a {
-    color: blue;
-  }
+.mainBody{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 10px;
+    font-weight: 17px;
+    font-family: sans-serif;
+    color: #ae6d6d;
+}
+
+.container>div{
+    flex: 100;
+}
+
+.subContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #ae6d6d;
+}
+
+.sidebar{
+    flex: 1;
+    background: color(srgb red rgb(24, 147, 24) blue)
+}
+
+.mainContainer{
+    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mainContainer>div{
+    flex: 100%;
+}
+
+h4{
+    padding: 10px;
+}
+
+.main{
+    min-height: 250px;
+    background: color(srgb red green rgb(215, 215, 233));
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;   
+}
+
+.content1, .content2, .content3{
+    min-height: 200px;
+    background: rgb(red, rgb(42, 173, 42), blue);
+}
+
+.footer{
+    flex: 100%;
+    min-height: 50px;
+    
 }

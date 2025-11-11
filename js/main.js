@@ -18,6 +18,7 @@ function createMenu() {
   // Object.entries -> convert object to array
   // then map to create a-tags (links)
   // then join everything into one big string
+  console.log(JSON.stringify(menu))
   return Object.entries(menu)
     .map(([urlHash, { label }]) => `
       <a href="#${urlHash}">${label}</a>
