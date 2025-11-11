@@ -3,25 +3,34 @@
     {
       "id": 1,
       "title": "Grekisk musiknatt",
-      "date": "2025-11-20",
+      "date": "2025-11-29",
+      "startTime": "19:30",
+      "location": "Gala Emporium – Stora scenen",
+      "price": "180 SEK",
       "image": "images/event1.jpg",
-      "description": "En kväll fylld med grekisk musik och dans.",
+      "description": "En magisk kväll fylld med grekisk musik, ljus och känslor. Upplev de mest älskade melodierna från Aten till Thessaloniki – med levande orkester och dansare i traditionella dräkter. Låt rytmerna ta dig till Medelhavet!",
       "club": "Greek Club"
     },
     {
       "id": 2,
       "title": "Sirtaki och bouzouki",
-      "date": "2025-12-05",
+      "date": "2025-12-13",
+      "startTime": "20:00",
+      "location": "Gala Emporium – Dansscen",
+      "price": "150 SEK",
       "image": "images/event2.jpg",
-      "description": "Traditionell sirtaki dans med levande bouzouki-band.",
+      "description": "Följ med på en kväll fylld av rytm, glädje och rörelse! Lär dig dansa Sirtaki med våra instruktörer och njut av levande bouzouki-band som spelar grekiska klassiker. En kväll för både dansälskare och nyfikna själar!",
       "club": "Greek Club"
     },
     {
       "id": 3,
-      "title": "Grekisk mat och melodi",
-      "date": "2026-01-10",
+      "title": "Myth och musik",
+      "date": "2026-02-15",
+      "startTime": "18:30",
+      "location": "Gala Emporium – Scen 3",
+      "price": "170 SEK",
       "image": "images/event3.jpg",
-      "description": "Smaker och musik från Grekland i en unik kvällsupplevelse.",
+      "description": "En unik show där grekiska myter möter musik och scenkonst – en resa genom gudar och hjältar. Föreställningen blandar teater, sång och visuella effekter för att berätta berättelser från antikens Grekland på ett modernt sätt. En upplevelse du sent kommer att glömma!",
       "club": "Greek Club"
     }
   ]
