@@ -1,0 +1,211 @@
+diff --git a/.vscode/settings.json b/.vscode/settings.json
+new file mode 100644
+index 0000000..86314a4
+--- /dev/null
++++ b/.vscode/settings.json
+@@ -0,0 +1,5 @@
++{
++  "liveServer.settings.ignoreFiles": [
++    "**/json/**"
++  ]
++}
+\ No newline at end of file
+diff --git a/css/pages/create-club.css b/css/pages/create-club.css
+new file mode 100644
+index 0000000..d9fd40d
+--- /dev/null
++++ b/css/pages/create-club.css
+@@ -0,0 +1,13 @@
++body.create-club {
++
++  input[type="text"],
++  textarea {
++    width: 100%;
++    margin-bottom: 20px;
++  }
++
++  textarea {
++    height: 80px;
++  }
++
++}
+\ No newline at end of file
+diff --git a/css/utils/style.css b/css/style.css
+similarity index 88%
+rename from css/utils/style.css
+rename to css/style.css
+index f83f5bf..b2df35c 100644
+--- a/css/utils/style.css
++++ b/css/style.css
+@@ -2,6 +2,7 @@
+ @import './pages/start-page.css';
+ @import './pages/jazz-club.css';
+ @import './pages/metal-club.css';
++@import './pages/create-club.css';
+ 
+ body {
+   margin: 20px
+diff --git a/index.html b/index.html
+index 216cb04..6f90303 100644
+--- a/index.html
++++ b/index.html
+@@ -1,24 +1,28 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+-<head>
+-  <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>Gala</title>
+-  <link rel="stylesheet" href="css/style.css">
+-</head>
++  <head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Gala</title>
++    <link rel="stylesheet" href="css/style.css">
++    <!-- Advantage of loading your script here, using defer, is that we follow standards :) -->
++    <script type="module" src="js/main.js" defer></script>
++  </head>
+ 
+-<body>
+-  <header>
+-    <nav>
+-    </nav>
+-  </header>
+-  <main></main>
+-  <footer></footer>
+-  <!-- Advantage of loading your script last in the body
++  <body>
++    <header>
++      <nav>
++      </nav>
++    </header>
++    <main></main>
++    <footer></footer>
++    <!-- Advantage of loading your script last in the body
+      if you have html before that it will already be 
+-     parsed by the browser and you can grab different elements-->
+-  <script type="module" src="js/main.js"></script>
+-</body>
++     parsed by the browser and you can grab different elements
++     (see above instead.. )
++     -->
++
++  </body>
+ 
+ </html>
+\ No newline at end of file
+diff --git a/js/main.js b/js/main.js
+index 656820a..03c6b79 100644
+--- a/js/main.js
++++ b/js/main.js
+@@ -1,13 +1,20 @@
+ import start from './pages/start.js';
+ import jazzClub from './pages/jazz-club.js';
+ import metalClub from './pages/metal-club.js';
++import createClub from './pages/create-club.js';
++import clubCreated from './pages/club-created.js';
+ 
+-// Our menu: label to display in menu and 
++const isAdmin = true; // "resultat av en inloggning"
++
++// Our menu: label to display in menu and
+ // function to run on menu choice
+ const menu = {
++  // urlHash
+   "start": { label: 'Start', function: start },
+   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
+-  "metal-klubben": { label: 'Metal-klubben', function: metalClub }
++  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
++  "create-club": { label: 'Skapa en klubb', function: createClub, isAdminPage: true },
++  "club-created": { label: 'Skapa en klubb', function: clubCreated, isAdminPage: true, showInMenu: false }
+ };
+ 
+ function createMenu() {
+@@ -15,16 +22,22 @@ function createMenu() {
+   // then map to create a-tags (links)
+   // then join everything into one big string
+   return Object.entries(menu)
+-    .map(([urlHash, { label }]) => `
+-      <a href="#${urlHash}">${label}</a>
+-    `)
+-    .join('');
++    .map(([urlHash, { label, isAdminPage, showInMenu }]) => {
++      if (showInMenu === false) { return; }
++      if (isAdminPage && isAdmin) {
++        return `<a href="#${urlHash}">${label}</a>`;
++      } else if (!isAdminPage) {
++        return `<a href="#${urlHash}">${label}</a>`;
++      }
++    })
++    .filter(x => x) // remove empty entries
++    .join(' | ');
+ }
+ 
+ async function loadPageContent() {
+   // if no hash redirect to #start
+   if (location.hash === '') { location.replace('#start'); }
+-  // add a class on body so that we can style differnt pages differently
++  // add a class on body so that we can style different pages differently
+   document.body.setAttribute('class', location.hash.slice(1));
+   // get the correct function to run depending on location.hash
+   const functionToRun = menu[location.hash.slice(1)].function;
+diff --git a/js/pages/club-created.js b/js/pages/club-created.js
+new file mode 100644
+index 0000000..0c67ff8
+--- /dev/null
++++ b/js/pages/club-created.js
+@@ -0,0 +1,13 @@
++export default async function clubCreated() {
++  // get all clubs
++  const allClubs = await (await fetch('http://localhost:3000/clubs')).json();
++  // show list of clubs
++  return `
++    <h1>Klubben skapades</h1>
++    <p>Nu finns följande klubbar:</p>
++    ${allClubs.toReversed().map(({ id, name, description }) => `
++      <h3>${name} (id: ${id})</h3>
++      <p>${description}</p>
++    `).join('')}
++  `;
++}
+\ No newline at end of file
+diff --git a/js/pages/create-club.js b/js/pages/create-club.js
+new file mode 100644
+index 0000000..0fcba7c
+--- /dev/null
++++ b/js/pages/create-club.js
+@@ -0,0 +1,31 @@
++export default async function createClub() {
++  return `
++    <h2>Skapa en klubb</h2>
++    <form id="create-club">
++      <input type="text" name="name" placeholder="Klubbnamn">
++      <textarea name="description" placeholder="Beskrivning"></textarea>
++      <input type="submit" value="Skapa">
++    </form>
++  `;
++}
++
++async function submitForm(event) {
++  const target = event.target;
++  // easy way to read values from forms - no querySelector needed!
++  const name = target.name.value;
++  const description = target.description.value;
++  await fetch('http://localhost:3000/clubs', {
++    method: 'POST',
++    headers: { 'Content-Type': 'application/json' },
++    body: JSON.stringify({ name, description }) // stringify = serialize
++  });
++  // goto club-created page
++  location.hash = '#club-created';
++}
++
++// add event listener
++document.body.addEventListener('submit', async event => {
++  if (!event.target.closest('#create-club')) { return; }
++  event.preventDefault();
++  await submitForm(event);
++});
+\ No newline at end of file
