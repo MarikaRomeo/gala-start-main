@@ -1,14 +1,11 @@
+body.Country-klubben {
+    background-image: url(../../img/background-country-club.png);
+}
+
 *{
     margin: 0;  
     padding: 0;
     box-sizing: border-box;
-}
-
-.mainBody{
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
 .container{
@@ -19,7 +16,7 @@
     gap: 10px;
     font-weight: 17px;
     font-family: sans-serif;
-    color: #ae6d6d;
+    flex: 1;
 }
 
 .container>div{
@@ -30,12 +27,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    background-color: #ae6d6d;
+    flex-direction: row-reverse;
 }
 
-.sidebar{
+.eventSidebar{
     flex: 1;
-    background: color(srgb red rgb(24, 147, 24) blue)
 }
 
 .mainContainer{
@@ -43,6 +39,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    
 }
 
 .mainContainer>div{
@@ -51,11 +48,12 @@
 
 h4{
     padding: 10px;
+    text-align: center;
 }
 
-.main{
+.main2{
     min-height: 250px;
-    background: color(srgb red green rgb(215, 215, 233));
+    background: green;
 }
 
 .content{
@@ -65,12 +63,29 @@ h4{
 }
 
 .content1, .content2, .content3{
+    flex: 1;
     min-height: 200px;
-    background: rgb(red, rgb(42, 173, 42), blue);
+    background: brown;
+    border: 2px solid black;
 }
 
 .footer{
     flex: 100%;
     min-height: 50px;
-    
+    background: yellow
+}
+
+.sidebar, .main2, content>div{
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.eventMenu{
+    text-align: center;
+}
+
+.event {
+    border: 1px solid black;
+    padding: 5px;
 }

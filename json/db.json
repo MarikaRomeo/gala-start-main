@@ -43,6 +43,20 @@
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "67ui",
+      "date": "2025-11-14 21:00",
+      "name": "Los Banditos",
+      "description": "Country kväll",
+      "clubId": "5cc6"
+    },
+    {
+      "id": "65ui",
+      "date": "2025-11-16 21:00",
+      "name": "Los Banditos2",
+      "description": "Country kvällar",
+      "clubId": "5cc6"
     }
   ]
 }
