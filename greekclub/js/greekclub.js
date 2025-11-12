@@ -81,3 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = "<p>Could not load events right now.</p>";
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const backButton = document.getElementById("back-to-home");
+  if (backButton) {
+    backButton.addEventListener("click", () => {
+      window.location.href = "../index.html";
+    });
+  }
+});
+
+
