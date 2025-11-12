@@ -14,10 +14,11 @@ export default async function createClub() {
   `;
 }
 
-async function listClubs(){
-  const clubsInDB = await (await fetch('http://localhost:3000/clubs', {method: 'GET'})).json();
+// Listar klubbar för html element
+async function listClubs() {
+  const clubsInDB = await (await fetch('http://localhost:3000/clubs', { method: 'GET' })).json();
   //const clubsData = await clubsInDB.json();
-  const simplified = clubsInDB.map(({ id, name}) => {id: clubID; name: clubName})
+  const simplified = clubsInDB.map(({ id, name }) => { id: clubID; name: clubName })
 }
 
 async function submitForm(event) {
