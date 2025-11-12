@@ -1,3 +1,9 @@
+//Potentiella förbättringar: 
+//- Filnamn, navnamn och liknande är kvar från den gamla funktionen (dvs, namnen stämmer inte överens med vad som görs)
+//- ingen av formulär inputs är obligatoriska, vilket leder till att du kan spamma tomma events eller glömma skriva in datum osv.
+//- Ingen check att clubbID stämmer överens med någon existerande klubb
+//- 
+
 export default async function createClub() { 
   return `
     <h2>Skapa event</h2>
