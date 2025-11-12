@@ -1,8 +1,14 @@
-export default async function createClub() {
+export default async function createClub() { //eventNamn, eventBeskrivning, klubbID, eventDate
   return `
     <h2>Skapa event</h2>
     <form>
-      <input type="text" name="event-name" placeholder="Eventnamn">
+      <input name="event-name" placeholder="Eventnamn">
+      <input name="clubID" placeholder="KlubbID: XXXX">
+      <input name="event-price" placeholder="Kostnad">
+      <input type="date" placeholder="När är eventet?">
+
+      <textarea name="event-description" placeholder="Beskrivning av eventet"></textarea>
+      <input type="submit" value="Skapa nytt event"> 
     </form>
 
     <h2>Skapa en klubb</h2>
@@ -14,7 +20,7 @@ export default async function createClub() {
   `;
 }
 
-// Listar klubbar för html element
+// Listar klubbar för html element (kanske inte används)
 async function listClubs() {
   const clubsInDB = await (await fetch('http://localhost:3000/clubs', { method: 'GET' })).json();
   //const clubsData = await clubsInDB.json();
