@@ -1,8 +1,26 @@
-import start from './pages/start.js';
-import jazzClub from './pages/jazz-club.js';
-import metalClub from './pages/metal-club.js';
-import countryClub from './pages/country-club.js';
-import rockClub from './pages/rock-club.js';
+// import start from './pages/start.js';
+// import jazzClub from './pages/jazz-club.js';
+// import metalClub from './pages/metal-club.js';
+// import countryClub from './pages/country-club.js';
+// import rockClub from './pages/rock-club.js';
+import clubInfoAndEvents from './utils/club-info-and-events.js';
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const element = document.querySelector(".testMain");
+  try{
+    const events = await clubInfoAndEvents();
+    if(events){
+        element.innerHTML = events;
+    }
+  }catch {
+    element.innerHTML = `<p>Någonting gick fel!</p>`
+  }
+});
+
+
+
+
+
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
@@ -27,16 +45,6 @@ import rockClub from './pages/rock-club.js';
 // }
 
 //lösning för att få min navigeringslänk att fungera
-document.getElementById("goToCountryClub").addEventListener("click", async function(event) {
-  event.preventDefault()
-  await goToCountryClub()
-})
-
-
-async function goToCountryClub(){
-  const html = await countryClub();
-  document.querySelector('body').innerHTML = html;
-}
 
 // async function loadPageContent() {
 //   // if no hash redirect to #start
