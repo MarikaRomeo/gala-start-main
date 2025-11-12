@@ -3,26 +3,36 @@
   <link rel="stylesheet" href="./css/pages/country-club.css" />
 </head>
 <html lang="en">
+<body>
+<div id="countryContainer">
 <div class="container">
-
   <div class="subContainer">
-    <div class="eventSidebar"></div>
 
       <div class="mainContainer">
         <div class="main2">
           <h4 class="headMenu">Country Klubben</h4>
           <p class="headText">Välkommen till Country klubben! Här spelar vi countrymusik för att läka själen. <br>Anmäl dig redan idag, du hittar knappen längst ned på sidan.  </p>
           
+          <div class="buttonContainer">
+            <button id="backToMainBtn" onClick="(function(){
+                window.location.href = 'index.html';
+                return false;
+                })();return false;">
+            </button>
+          </div>
         </div>
 
         <div class="content">
-          <div class="artists"><h4>Återkommande artister</h4></div>
-          <div class="content1"><h4 class="contenth4">Gareth</h4></div>
-          <div class="content2"><h4 class="contenth4">Content2</h4></div>
-          <div class="content3"><h4 class="contenth4">Content3</h4></div>
-          <div class="footer"><h4>Footer</h4></div>
+          <div class="artists"><h4>Kommande evenemang</h4>
+            <div class="eventContent"><h4 class="contenth4">Gareth</h4></div>
+          </div>
         </div>
       </div>
   </div>
 </div> 
+</div>
+  <script src="./js/pages/country-club.js"></script>
+</body>
 </html>
+
+

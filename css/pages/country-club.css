@@ -1,142 +1,157 @@
-body.Country-klubben {
-    background-image: url(../../img/background-country-club.png);
-}
+body{
+        background-image: url(../../img/background-country-club.png);
+        margin: 0;
+    }
 
-*{
-    margin: 0;  
-    padding: 0;
-    box-sizing: border-box;
-}
+#countryContainer {
 
-.container{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    gap: 10px;
-    font-weight: 17px;
-    font-family: sans-serif;
-    flex: 1;
-}
+    /* body.Country-klubben {
+        background-image: url(../../img/background-country-club.png);
+    } */
 
-.container>div{
-    flex: 100;
-}
-
-.subContainer{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    flex-direction: row-reverse;
-}
-
-.eventSidebar{
-    flex: 1;
-}
-
-.mainContainer{
-    flex: 4;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     
-}
 
-.mainContainer>div{
-    flex: 100%;
-}
+    .container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        gap: 10px;
+        font-weight: 17px;
+        font-family: sans-serif;
+        flex: 1;
+    }
 
-h4{
-    padding: 10px;
-    text-align: center;
-}
+    .container>div{
+        flex: 100;
+    }
 
-.main2{
-    min-height: 250px;
-    flex-direction: column;
-}
+    .subContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex-direction: row-reverse;
+    }
 
-.headMenu{  
-    font-family: 'Georgia', serif; 
-    font-size: 64px;
-    font-weight: bold;
-    text-align: center;
-    color: #4b2e1e; 
-    padding: 4px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    flex: 1;
-}
+    .eventContent{
+        flex: 1;
+        margin: 0px 60px;
+        padding: 2px;
+    }
 
-.headText{
-    font-family: 'Georgia', serif; 
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    color: #100a08; 
-    padding: 4px;
-    letter-spacing: 1px;
-    flex: 2;
-}
+    .mainContainer{
+        flex: 4;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        
+    }
 
-.content{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;   
-}
+    .mainContainer>div{
+        flex: 100%;
+    }
 
-.artists{
-    flex: 100%;
-    min-height: 50px;
-    font-family: 'Georgia', serif; 
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    color: #4b2e1e; 
-    padding: 4px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
+    h4{
+        padding: 10px;
+        text-align: center;
+    }
 
-.content1, .content2, .content3{
-    flex: 1;
-    min-height: 200px;
-    border: 2px solid black;
-}
+    .main2{
+        min-height: 250px;
+        flex-direction: column;
+    }
 
-.content1{
-    background: url(../../img/gareth-country-club.jpg) no-repeat center center;
-    background-size: contain;
-}
+    .headMenu{  
+        font-family: 'Georgia', serif; 
+        font-size: 64px;
+        font-weight: bold;
+        text-align: center;
+        color: #4b2e1e; 
+        padding: 4px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        flex: 1;
+    }
 
+    .headText{
+        font-family: 'Georgia', serif; 
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #100a08; 
+        padding: 4px;
+        letter-spacing: 1px;
+        flex: 2;
+    }
 
-.footer{
-    flex: 100%;
-    min-height: 50px;
-}
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;   
+    }
 
-.sidebar, .main2, content>div{
-    display: flex;
-    justify-content: center;
-    border-radius: 3px;
-}
+    .artists{
+        flex: 100%;
+        min-height: 50px;
+        font-family: 'Georgia', serif; 
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        color: #4b2e1e; 
+        padding: 4px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
 
-.eventMenu{
-    text-align: center;
-}
+    .content1, .content2, .content3{
+        flex: 1;
+        min-height: 200px;
+        border: 2px solid black;
+    }
 
-.event {
-    border: 1px solid black;
-    padding: 5px;
-}
+    .content1{
+        background: url(../../img/gareth-country-club.jpg) no-repeat center center;
+        background-size: contain;
+    }
 
-.contenth4{
-    font-family: 'Georgia', serif; 
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: #4b2e1e; 
-    padding: 4px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+    .sidebar, .main2, content>div{
+        display: flex;
+        justify-content: center;
+        border-radius: 3px;
+    }
+
+    .eventMenu{
+        text-align: center;
+    }
+
+    .event {
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    .contenth4{
+        font-family: 'Georgia', serif; 
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        color: #4b2e1e; 
+        padding: 4px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    #backToMainBtn{
+        padding: 12px 24px;
+        background-color: #2a9d8f;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #backToMainBtn:hover {
+        background-color: #21867a;
+        }
+
 }

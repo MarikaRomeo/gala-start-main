@@ -13,6 +13,15 @@ export default async function clubInfoAndEvents(clubId) {
   }
   const events =
     await (await fetch(url)).json();
+    const latestByClubId = Object.values(
+  events.reduce((acc, item) => {
+    const currentDate = new Date(item.date);
+    if(!acc[item.clubId] || currentDate > new Date(acc[item.clubId].date)){
+      acc[item.clubId] = item;
+    }
+    return acc;
+  },{}) 
+);
   // return html
   return `
     <h1>${name}</h1>
@@ -20,7 +29,7 @@ export default async function clubInfoAndEvents(clubId) {
     <!-- <img src=${backgroundPath}> -->
     <div>
     <h2>Events</h2>
-    ${events
+    ${latestByClubId
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ date, name, description }) => `
         <article class="event">

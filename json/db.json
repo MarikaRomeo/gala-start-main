@@ -38,13 +38,6 @@
       "clubId": "fg5i"
     },
     {
-      "id": "43ac",
-      "date": "2025-11-01 19:00",
-      "name": "Fusion-jazzarna Corea's Disciples",
-      "description": "Cool fusion-jazz med en massa dim-ackord.",
-      "clubId": "a37c"
-    },
-    {
       "id": "67ui",
       "date": "2025-11-14 21:00",
       "name": "Los Banditos",
@@ -52,10 +45,24 @@
       "clubId": "5cc6"
     },
     {
+      "id": "43ac",
+      "date": "2025-11-01 19:00",
+      "name": "Fusion-jazzarna Corea's Disciples",
+      "description": "Cool fusion-jazz med en massa dim-ackord.",
+      "clubId": "a37c"
+    },
+    {
       "id": "65ui",
       "date": "2025-11-16 21:00",
       "name": "Los Banditos2",
       "description": "Country kvällar",
+      "clubId": "5cc6"
+    },
+    {
+      "id": "dr45",
+      "date": "2025-11-18 21:00",
+      "name": "Los Banditos3",
+      "description": "Country kvällarna",
       "clubId": "5cc6"
     },
     {
