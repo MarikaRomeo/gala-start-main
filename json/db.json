@@ -31,8 +31,8 @@
     {
       "id": "57f3",
       "date": "2025-11-06 21:00",
-      "name": "Mega Death-die",
-      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
+      "name": "Portrait Decay",
+      "description": "Screamo & Black metal verkar inte som en blandning som skulle passa någon, men Portrait Decay visar med sin EP 'III' att både emo's och skogspopulationen kan gå tillsammans och skapa något brutalt och fint!",
       "clubId": "f8ed"
     },
     {
@@ -90,22 +90,29 @@
       "description": "En magisk kväll fylld med grekisk musik, ljus och känslor. Upplev de mest älskade melodierna från Aten till Thessaloniki – med levande orkester och dansare i traditionella dräkter.",
       "image": "./images/event1.jpg",
       "clubId": "gr01"
-    },
-    {
+        },
+        {
       "id": "grE2",
       "date": "2025-12-13 20:00",
       "name": "Sirtaki och bouzouki",
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
-    },
-    {
+        },
+        {
       "id": "grE3",
       "date": "2026-02-15 18:30",
       "name": "Myth och musik",
       "description": "En show där grekiska myter möter musik och scenkonst. En resa genom antikens Grekland på ett modernt sätt.",
       "image": "./images/event3.jpg",
       "clubId": "gr01"
+},
+{
+      "id": "83dg",
+      "date": "2026-02-15 18:30",
+      "name": "Socialstyrelsen: svensk turne",
+      "description": "En scen som Kängpunken kan inte dö ut så länge vi har brillianta band som är redo att skrika tills öron faller av!",
+      "clubId": "f8ed"
     },
     {
       "id": "itE1",
