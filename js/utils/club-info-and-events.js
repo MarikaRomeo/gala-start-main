@@ -1,3 +1,4 @@
+//Skapat en variable som associerar korrekt sökväg till varje hemsdia till dess respektive klubb-id
 const CLUBIDTOHREFDICT = {
   "5cc6": "../../html/country-club.html",
   "t3ch": "../../html/techno.html",
@@ -22,16 +23,15 @@ export default async function clubInfoAndEvents(clubId) {
 
   const events =
     await (await fetch(url)).json();
-  const latestByClubId = Object.values(
-    events.reduce((acc, item) => {
-      const currentDate = new Date(item.date);
-      if (!acc[item.clubId] || currentDate < new Date(acc[item.clubId].date)) {
-        acc[item.clubId] = item;
-      }
-      return acc;
-    }, {})
-  );
-
+    const latestByClubId = Object.values(
+  events.reduce((acc, item) => {
+    const currentDate = new Date(item.date);
+    if(!acc[item.clubId] || currentDate < new Date(acc[item.clubId].date)){
+      acc[item.clubId] = item;
+    }
+    return acc;
+  },{}) 
+);
 
   // return html
   return `
