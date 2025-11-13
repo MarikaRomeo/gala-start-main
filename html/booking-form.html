@@ -1,76 +1,41 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Italian Club Booking</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap"
-
         rel="stylesheet">
-
     <link rel="stylesheet" href="/css/pages/italian-club.css">
-
 </head>
 
 
 <body class="booking-page">
-
     <main class="booking-card">
-
         <h1 id="eventTitle">Book your tickets</h1>
-
         <form id="bookingForm" class="booking-form" novalidate>
-
             <label>
-
                 Event
-
                 <input id="eventName" name="event" type="text" readonly>
-
             </label>
-
             <label>
-
                 Full name
-
                 <input id="fullName" name="name" type="text" required>
-
             </label>
-
             <label>
-
                 Email
-
                 <input id="email" name="email" type="email" required>
-
             </label>
-
             <label>
-
                 Number of tickets
-
                 <input id="tickets" name="tickets" type="number" min="1" max="10" value="1" required>
-
             </label>
-
             <div class="booking-error" id="formError" role="alert"></div>
-
             <button type="submit" class="booking-submit">Save</button>
-
         </form>
-
     </main>
-
-    <script src="js/booking-form.js"></script>
-
+    <script src="/js/utils/booking-form.js"></script>
 </body>
-
 
 </html>
