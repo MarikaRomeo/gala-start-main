@@ -64,11 +64,24 @@ async function showTechno() {
   document.getElementById('app').innerHTML = html;
 }
 
+// Funktion för att generera unikt bokningsnummer
+function generateBookingNumber() {
+  const prefix = 'TECH';
+  const timestamp = Date.now().toString().slice(-6); // Senaste 6 siffrorna av timestamp
+  const randomNum = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  return `${prefix}-${timestamp}-${randomNum}`;
+}
+
 // Funktion för att boka biljetter
 function bookTicket(eventId, eventName) {
-  alert(`🎫 Biljett bokad för "${eventName}"!\n\nDin bokning är bekräftad. Vi ses på eventet!`);
+  const bookingNumber = generateBookingNumber();
 
-  console.log(`Biljett bokad för event ID: ${eventId}, Event: ${eventName}`);
+  alert(` Biljett bokad för "${eventName}"!\n\n` +
+    ` Bokningsnummer: ${bookingNumber}\n\n` +
+    `Spara ditt bokningsnummer för framtida referens.\n` +
+    `Vi ses på eventet!`);
+
+  console.log(`Biljett bokad - Event: ${eventName}, Event ID: ${eventId}, Bokningsnummer: ${bookingNumber}`);
 }
 
 // Funktion för att gå tillbaka till huvudsidan

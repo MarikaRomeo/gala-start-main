@@ -18,7 +18,12 @@
     {
       "id": "t3ch",
       "name": "Techno-klubben",
-      "description": "Välkommen till Techno-klubben, här bokar vi endast in världens bästa Dj's. Checka in våra kommande evenemang och köp biljetter innan de tar slut!",
+      "description": "Välkommen till Techno-klubben, här bokar vi endast in världens bästa Dj's. Checka in våra kommande evenemang och köp biljetter innan de tar slut!"
+    },
+    {
+      "id": "f8ed",
+      "name": "Riktiga-Rockare",
+      "description": "Riktig rock för riktiga rockare >:U",
       "backgroundPath": "../img/background-rock-club.jpg"
     }
   ],

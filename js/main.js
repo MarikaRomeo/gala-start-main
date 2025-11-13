@@ -17,20 +17,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+const isAdmin = true; // "resultat av en inloggning"
 
-
-
-
-
-// Our menu: label to display in menu and 
+// Our menu: label to display in menu and
 // function to run on menu choice
 // const menu = {
 //   "start": { label: 'Start', function: start },
 //   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
 //   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-//   "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub}
+//   "riktiga-rockare": {label: 'Riktiga-Rockare', function: rockClub},
+//   "create-club": { label: 'Skapa en klubb', function: createClub, isAdminPage: true },
 //   "Country-klubben": {label: 'Country-klubben', function: countryClub}
 // };
+// urlHash
 
 // function createMenu() {
 //   // Object.entries -> convert object to array
