@@ -38,7 +38,7 @@ async function submitForm(event) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ date, name, description, clubID }) // stringify = serialize
   });
-  location.hash = '#start';
+  window.location.replace('/html/index.html');
 }
 
 // add event listener

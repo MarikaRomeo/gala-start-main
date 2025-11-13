@@ -20,8 +20,12 @@
       "id": "gr01",
       "name": "Greek Club",
       "description": "Upplev grekisk musik, dans och kultur."
+    },
+    {
+      "id": "it01",
+      "name": "Radio Italia - Solo Musica Italiana",
+      "description": "Din alskade italienska latar."
     }
-
   ],
   "events": [
     {
@@ -86,16 +90,16 @@
       "description": "En magisk kväll fylld med grekisk musik, ljus och känslor. Upplev de mest älskade melodierna från Aten till Thessaloniki – med levande orkester och dansare i traditionella dräkter.",
       "image": "./images/event1.jpg",
       "clubId": "gr01"
-},
-{
+        },
+        {
       "id": "grE2",
       "date": "2025-12-13 20:00",
       "name": "Sirtaki och bouzouki",
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
-},
-{
+        },
+        {
       "id": "grE3",
       "date": "2026-02-15 18:30",
       "name": "Myth och musik",
@@ -109,17 +113,96 @@
       "name": "Socialstyrelsen: svensk turne",
       "description": "En scen som Kängpunken kan inte dö ut så länge vi har brillianta band som är redo att skrika tills öron faller av!",
       "clubId": "f8ed"
-}
-
+    },
+    {
+      "id": "itE1",
+      "date": "2025-12-10 20:00",
+      "name": "Tribute Band Zucchero",
+      "description": "En hyllning till en av Italiens mest alskade artister.",
+      "image": "../images/Zucchero_ph-Daniele-Barraco_2022-pp-11-18.jpg",
+      "clubId": "it01"
+    },
+    {
+      "id": "itE2",
+      "date": "2025-11-15 22:00",
+      "name": "Italo Disco 90-2000",
+      "description": "Res tillbaka i tiden med Italo disco fran 90- och 2000-talet.",
+      "image": "../images/italodisco.jpg",
+      "clubId": "it01"
+    },
+    {
+      "id": "itE3",
+      "date": "2025-11-20 18:00",
+      "name": "Top 40 - Best Italian Hits",
+      "description": "De basta italienska hitsen.",
+      "image": "../images/original-italian-classics-volume-1-b-iext166635476.jpg",
+      "clubId": "it01"
+    },
+    {
+      "id": "itE4",
+      "date": "2025-12-31 23:00",
+      "name": "We Love Gigi D'Agostino",
+      "description": "En kvall dedikerad till Gigi D'Agostino och hans ikoniska latar.",
+      "image": "../images/gigi-dag.jpg",
+      "clubId": "it01"
+    }
   ],
   "bookings": [
     {
-      "id": "fa02",
+      "id": "538a",
+      "name": "Marika",
+      "email": "marika.romeo@hotmail.com",
+      "tickets": 1,
+      "event": "Top 40 - Best Italian Hits - 20 november 2025 kl 18:00",
+      "bookingNumber": "2025-11-13T20:58:59.562Z"
+    },
+    {
+      "id": "30b3",
       "name": "test",
       "email": "marika.romeo@hotmail.com",
       "tickets": 1,
-      "event": "Tribute Band Zucchero – 10 December 20:00",
-      "createdAt": "2025-11-09T21:42:58.876Z"
+      "event": "Top 40 - Best Italian Hits - 20 november 2025 kl 18:00",
+      "bookingNumber": "2025-11-13T21:00:15.610Z"
+    },
+    {
+      "id": "5382",
+      "name": "hiug",
+      "email": "kjbkg",
+      "tickets": 1,
+      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
+      "bookingNumber": "2025-11-13T21:06:00.504Z"
+    },
+    {
+      "id": "1936",
+      "name": "iugjhfuyv",
+      "email": "jkbkhhv",
+      "tickets": 1,
+      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
+      "bookingNumber": "2025-11-13T21:07:17.152Z"
+    },
+    {
+      "id": "7d6f",
+      "name": "sfhoasch",
+      "email": "szczscmzkscn",
+      "tickets": 1,
+      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
+      "bookingNumber": "2025-11-13T21:11:42.761Z"
+    },
+    {
+      "id": "a1f3",
+      "name": "ewfpoajfpiaf",
+      "email": "aflkafhhasc",
+      "tickets": 1,
+      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
+      "bookingNumber": "d82da5d7-5118-4512-b3da-b47c64cdae2c"
+    },
+    {
+      "id": "d23b",
+      "name": "Test",
+      "email": "test@gmail.com",
+      "tickets": 4,
+      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
+      "bookingNumber": "BK-251113-I4AZ"
     }
   ]
 }
