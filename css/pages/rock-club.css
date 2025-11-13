@@ -22,17 +22,25 @@ body {
         margin-left: auto;
         color: white;
         /*flex: 1;*/
-        display: flex;
+        /*display: flex;*/
 
         h2 {
             text-align: center;
         }
+    }
+    .bar {
+        /*background-color: rgb(57, 71, 71);*/
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0px;
+        position: absolute; top: 5px; left: 5px;
+        display: inline-block;
+
         nav {
-            padding: 0px;
-            position: absolute; top: 10px; left: 5px;
             a {
-                justify-content: space-between;
-                /*flex-direction: row;
+                /*justify-content: space-between;
+                flex-direction: row;
                 flex-wrap: nowrap;
                 border-right: solid 1px;*/
             }
