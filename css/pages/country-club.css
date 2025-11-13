@@ -1,5 +1,5 @@
 body{
-        background-image: url(../../img/background-country-club.png);
+        background-image: url(../../images/background-country-club.png);
         margin: 0;
     }
 
@@ -153,5 +153,4 @@ body{
     #backToMainBtn:hover {
         background-color: #21867a;
         }
-
 }

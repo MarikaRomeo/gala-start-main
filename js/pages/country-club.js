@@ -4,8 +4,11 @@ async function clubEvents(clubId) {
   if (clubId) {
     url += '?clubId=' + clubId;
   }
-  const events =
+  let events =
     await (await fetch(url)).json();
+    events = events.filter((event) => {
+      return isNaN(event.id)
+    })
   // return html 
   return `
     <div>
