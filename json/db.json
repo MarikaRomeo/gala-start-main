@@ -11,6 +11,11 @@
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
     },
     {
+      "id": "5cc6",
+      "name": "Country-klubben",
+      "description": "Countrymusik för att läka själen."
+    },
+    {
       "id": "t3ch",
       "name": "Techno-klubben",
       "description": "Välkommen till Techno-klubben, här bokar vi endast in världens bästa Dj's. Checka in våra kommande evenemang och köp biljetter innan de tar slut!"
@@ -18,7 +23,8 @@
     {
       "id": "f8ed",
       "name": "Riktiga-Rockare",
-      "description": "Riktig rock för riktiga rockare >:U"
+      "description": "Riktig rock för riktiga rockare >:U",
+      "backgroundPath": "../img/background-rock-club.jpg"
     }
   ],
   "events": [
@@ -37,11 +43,32 @@
       "clubId": "fg5i"
     },
     {
+      "id": "67ui",
+      "date": "2025-11-14 21:00",
+      "name": "Los Banditos",
+      "description": "Country kväll",
+      "clubId": "5cc6"
+    },
+    {
       "id": "43ac",
       "date": "2025-11-01 19:00",
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "65ui",
+      "date": "2025-11-16 21:00",
+      "name": "Los Banditos2",
+      "description": "Country kvällar",
+      "clubId": "5cc6"
+    },
+    {
+      "id": "dr45",
+      "date": "2025-11-18 21:00",
+      "name": "Los Banditos3",
+      "description": "Country kvällarna",
+      "clubId": "5cc6"
     },
     {
       "id": "t1ch",
@@ -66,6 +93,16 @@
       "description": "Den legendariska duon Daft Punk återvänder till Techno-klubben för en spektakulär kväll med deras ikoniska elektroniska sound och visuella shower.",
       "image": "images/daft-punk.jpg",
       "clubId": "t3ch"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "fa02",
+      "name": "test",
+      "email": "marika.romeo@hotmail.com",
+      "tickets": 1,
+      "event": "Tribute Band Zucchero – 10 December 20:00",
+      "createdAt": "2025-11-09T21:42:58.876Z"
     }
   ]
 }
