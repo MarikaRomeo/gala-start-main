@@ -32,7 +32,7 @@ body {
     .bar {
         /*background-color: rgb(57, 71, 71);*/
         padding: 0px;
-        position: absolute; top: 5px; left: 5px;
+        position: absolute; top: 0px; left: 0px;
         display: inline-block;
 
         nav {
@@ -49,6 +49,11 @@ body {
                 border-bottom: 2px solid currentColor;
                 background-color: rgb(20, 20, 20);
                 border-right: 2px solid currentColor;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: rgb(75,75,75);
+                }
 
                 &:last-child {
                     border-top-right-radius: 10px;
@@ -83,6 +88,11 @@ body {
             margin-left: 10px;
             margin-right: 10px;
             border-radius: 10px;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: rgb(100, 100, 100);
+            }
         }
     }
 }
