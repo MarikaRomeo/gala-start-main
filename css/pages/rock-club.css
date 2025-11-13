@@ -22,9 +22,20 @@ body {
         margin-left: auto;
         color: white;
         /*flex: 1;*/
+        display: flex;
 
         h2 {
             text-align: center;
+        }
+        nav {
+            padding: 0px;
+            position: absolute; top: 10px; left: 5px;
+            a {
+                justify-content: space-between;
+                /*flex-direction: row;
+                flex-wrap: nowrap;
+                border-right: solid 1px;*/
+            }
         }
     }
 }
