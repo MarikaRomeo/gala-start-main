@@ -48,13 +48,22 @@ body {
                 padding: 0.5rem 0;
                 border-bottom: 2px solid currentColor;
                 background-color: rgb(20, 20, 20);
+                border-right: 2px solid currentColor;
+
+                &:last-child {
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    border-right: 0px;
+                }
             }
+            
                 
         }
     }
 
     .eventContent {
         border: solid red 1px;
+        border-radius: 20px;
         div {
             padding: 0px;
         }
