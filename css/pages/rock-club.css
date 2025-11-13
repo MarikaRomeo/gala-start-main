@@ -54,13 +54,12 @@ body {
     }
 
     .eventContent {
-        background-color: aqua;
+        border: solid red 1px;
         div {
             padding: 0px;
         }
         article {
             text-align: center;
-            h3 {}
         }
     }
 }
