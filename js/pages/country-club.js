@@ -11,18 +11,18 @@ async function clubEvents(clubId) {
     })
   // return html 
   return `
-    <div>
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
-      .map(({ date, name, description }) => `
+      .map(({ date, name, description, image }) => `
         <article class="event">
-          <h3>${name} <br> ${date}</h3>
-          <p>${description}</p>
+          <h3>${name} <br></h3> 
+          ${image ? `<img src="${image}" alt="${image}" class="event-image">` : ''}
+          <h3>${date}</h3>
+          <p class="eventImageDescription">${description}</p>
         </article>
       `)
       .join('')
     }
-    </div>
   `;
 }
 //Kallar på funktionen ovan och visar resultatet av eventinformationen i html-taggen .eventcontent

@@ -4,15 +4,11 @@ body{
     }
 
 #countryContainer {
-
-    /* body.Country-klubben {
-        background-image: url(../../img/background-country-club.png);
-    } */
-
-    
+    display: block;
 
     .container{
         width: 100%;
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
         margin: 10px;
@@ -22,29 +18,13 @@ body{
         flex: 1;
     }
 
-    .container>div{
-        flex: 100;
-    }
-
-    .subContainer{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        flex-direction: row-reverse;
-    }
-
-    .eventContent{
-        flex: 1;
-        margin: 0px 60px;
-        padding: 2px;
-    }
+    
 
     .mainContainer{
-        flex: 4;
+        flex: 1;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        
+        gap: 10px;  
     }
 
     .mainContainer>div{
@@ -71,27 +51,65 @@ body{
         text-transform: uppercase;
         letter-spacing: 4px;
         flex: 1;
+        
     }
 
     .headText{
         font-family: 'Georgia', serif; 
-        font-size: 14px;
+        font-size: 18px;
         font-weight: bold;
         text-align: center;
-        color: #100a08; 
+        color: #090101; 
         padding: 4px;
         letter-spacing: 1px;
-        flex: 2;
+        flex: 1;
+        margin-top: -60px;
     }
 
-    .content{
+   .content{
+        flex: 1;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;   
+        gap: 10px; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } 
+
+    .eventContent{
+        flex: 1;
+        flex-wrap: wrap;
+        margin: 0px 20px;
+        padding: 2px;
+        display: flex;
+        flex-grow: 1;
+        gap: 10px;
     }
 
-    .artists{
-        flex: 100%;
+    .event {
+        border: 4px solid black;
+        border-radius: 20px;
+        padding: 5px;
+        gap: 20px;
+        text-align: left;
+        min-height: 350px;
+        min-width: 400px;
+        flex-wrap: wrap;
+        background: #CC5500;
+        
+        img {
+            border: 5px solid #333;
+            border-radius: 10px;
+        }
+    }
+
+    .eventImageDescription {
+        font-size: 18px;
+    }
+    
+    .upcomingEvents{
+        flex: 1;
+        display: flex;
         min-height: 50px;
         font-family: 'Georgia', serif; 
         font-size: 32px;
@@ -101,17 +119,7 @@ body{
         padding: 4px;
         text-transform: uppercase;
         letter-spacing: 4px;
-    }
-
-    .content1, .content2, .content3{
-        flex: 1;
-        min-height: 200px;
-        border: 2px solid black;
-    }
-
-    .content1{
-        background: url(../../img/gareth-country-club.jpg) no-repeat center center;
-        background-size: contain;
+        margin-top: -60px;
     }
 
     .sidebar, .main2, content>div{
@@ -124,10 +132,7 @@ body{
         text-align: center;
     }
 
-    .event {
-        border: 1px solid black;
-        padding: 5px;
-    }
+
 
     .contenth4{
         font-family: 'Georgia', serif; 
@@ -142,13 +147,16 @@ body{
 
     #backToMainBtn{
         padding: 12px 24px;
-        background-color: #2a9d8f;
+        background-color: #9e7645;
         color: #fff;
         border: none;
         border-radius: 6px;
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        min-height: 50px;
+        min-width: 150px;
+        z-index: -1;
     }
     #backToMainBtn:hover {
         background-color: #21867a;
