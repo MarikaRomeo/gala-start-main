@@ -30,15 +30,22 @@ body {
     }
     .bar {
         /*background-color: rgb(57, 71, 71);*/
-        display: flex;
-        justify-content: space-between;
-
         padding: 0px;
         position: absolute; top: 5px; left: 5px;
         display: inline-block;
 
         nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100%);
+
             a {
+                flex: 1;
+                text-align: center;
+                text-decoration: none;
+                padding: 0.5rem 0;
+                
                 /*justify-content: space-between;
                 flex-direction: row;
                 flex-wrap: nowrap;
