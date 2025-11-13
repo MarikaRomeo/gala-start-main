@@ -4,26 +4,47 @@ async function clubEvents(clubId) {
   if (clubId) {
     url += '?clubId=' + clubId;
   }
-  let events =
+  const events =
     await (await fetch(url)).json();
-    events = events.filter((event) => {
-      return isNaN(event.id)
-    })
   // return html 
   return `
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
-      .map(({ date, name, description, image }) => `
+      .map(({ date, name, description, image, eventId }) => `
         <article class="event">
           <h3>${name} <br></h3> 
           ${image ? `<img src="${image}" alt="${image}" class="event-image">` : ''}
           <h3>${date}</h3>
-          <p class="eventImageDescription">${description}</p>
+          <div class="eventImageDescriptionContainer">
+            <p class="eventImageDescription">${description}</p>
+            <button class="book-country-ticket-btn" onclick="bookCountryTicket('${eventId}', '${name}')">
+              Boka Biljett
+            </button>
+          </div>
         </article>
       `)
       .join('')
     }
   `;
+}
+
+function generateCountryBookingNumber() {
+  const prefix = 'Country';
+  const timestamp = Date.now().toString().slice(-6); // Senaste 6 siffrorna av timestamp
+  const randomNum = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  return `${prefix}-${timestamp}-${randomNum}`;
+}
+
+// Funktion för att boka biljetter
+function bookCountryTicket(eventId, eventName) {
+  const bookingNumber = generateCountryBookingNumber();
+
+  alert(` Biljett bokad för "${eventName}"!\n\n` +
+    ` Bokningsnummer: ${bookingNumber}\n\n` +
+    `Spara ditt bokningsnummer för framtida referens.\n` +
+    `Vi ses på eventet!`);
+
+  console.log(`Biljett bokad - Event: ${eventName}, Event ID: ${eventId}, Bokningsnummer: ${bookingNumber}`);
 }
 //Kallar på funktionen ovan och visar resultatet av eventinformationen i html-taggen .eventcontent
 document.addEventListener("DOMContentLoaded", async () => {

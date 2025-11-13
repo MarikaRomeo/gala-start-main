@@ -83,7 +83,7 @@ body{
         padding: 2px;
         display: flex;
         flex-grow: 1;
-        gap: 10px;
+        gap: 20px;
     }
 
     .event {
@@ -92,7 +92,7 @@ body{
         padding: 5px;
         gap: 20px;
         text-align: left;
-        min-height: 350px;
+        min-height: 320px;
         min-width: 400px;
         flex-wrap: wrap;
         background: #CC5500;
@@ -103,8 +103,31 @@ body{
         }
     }
 
+    .eventImageDescriptionContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .eventImageDescription {
         font-size: 18px;
+    }
+
+    .book-country-ticket-btn{
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        display: block;
+        padding: 12px 24px;
+        background-color: #9e7645;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        min-height: 25px;
+        min-width: 75px;
     }
     
     .upcomingEvents{
