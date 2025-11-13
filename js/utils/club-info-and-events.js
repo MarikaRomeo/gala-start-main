@@ -11,8 +11,13 @@ export default async function clubInfoAndEvents(clubId) {
     backgroundPath = clubBackground;
     url += '?clubId=' + clubId;
   }
-  const events =
+
+  //Lagt till filter "isNaN" då det finns 2 databaser i projektet som krockar.
+  let events =
     await (await fetch(url)).json();
+     events = events.filter((event) => {
+      return isNaN(event.id)
+    })
     const latestByClubId = Object.values(
   events.reduce((acc, item) => {
     const currentDate = new Date(item.date);

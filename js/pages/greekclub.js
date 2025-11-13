@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("events-container");
 
-  fetch("./json/events.json")
+  fetch("../greekclub/json/events.json")
     .then(response => response.json())
     .then(data => {
       data.events.forEach(event => {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         eventDiv.classList.add("event-card");
 
         eventDiv.innerHTML = `
-          <img src="${event.image}" alt="${event.title}">
+          <img src="../${event.image}" alt="${event.title}">
           <h2>${event.title}</h2>
           <p><strong>Datum:</strong> ${event.date}</p>
           <p><strong>Tid:</strong> ${event.startTime}</p>
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.getElementById("back-to-home");
   if (backButton) {
     backButton.addEventListener("click", () => {
-      window.location.href = "../index.html";
+      window.location.href = "index.html";
     });
   }
 });
