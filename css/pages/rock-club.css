@@ -12,7 +12,7 @@ body {
         color: rgb(255, 255, 255);
     }
 
-    div {
+    .container {
         width: 80vw;
         padding: 35px 30px 45px;
         padding-bottom: 45px;
@@ -28,6 +28,7 @@ body {
             text-align: center;
         }
     }
+
     .bar {
         /*background-color: rgb(57, 71, 71);*/
         padding: 0px;
@@ -41,18 +42,25 @@ body {
             width: calc(100% - 10px);
 
             a {
-                flex: 1;
+                flex: 0.1 auto;
                 text-align: center;
                 text-decoration: none;
                 padding: 0.5rem 0;
                 border-bottom: 2px solid currentColor;
                 
-                /*justify-content: space-between;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                border-right: solid 1px;*/
             }
                 
+        }
+    }
+
+    .eventContent {
+        background-color: aqua;
+        div {
+            padding: 0px;
+        }
+        article {
+            text-align: center;
+            h3 {}
         }
     }
 }
