@@ -8,7 +8,7 @@
 /* ====== BASE ====== */
 body {
   margin: 0;
-  background-color: #0b2d26; /* verde scuro profondo */
+  background-color: #0b2d26; 
   color: #fffdf8;
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -19,7 +19,7 @@ body {
 h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 3em;
-  color: #ffdae0; /* rosa antico tenue */
+  color: #ffdae0; 
   margin-top: 40px;
   letter-spacing: 1px;
 }
@@ -27,7 +27,7 @@ h1 {
 h2 {
   font-weight: 300;
   font-style: italic;
-  color: #e8d6d1; /* beige rosato */
+  color: #e8d6d1; 
 }
 
 /* ====== NAV ====== */
@@ -53,9 +53,21 @@ nav a:hover {
   color: #fff;
 }
 
+.gala-btn {
+  margin-top: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffb5c0, #ffd6cc);
+  color: #0b2d26;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
 
 .club {
-  background-color: rgba(199, 82, 102, 0.15); /* rosa antico trasparente */
+  background-color: rgba(199, 82, 102, 0.15); 
   border: 1px solid rgba(255, 218, 224, 0.25);
   border-radius: 15px;
   width: 45%;
