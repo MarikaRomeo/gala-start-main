@@ -18,6 +18,7 @@ async function clubEvents(clubId) {
         <article class="event">
           <h3>${name} <br> ${date}</h3>
           <p>${description}</p>
+          <button type="button" onclick="window.location.href='booking-form.html'">Skaffa biljett för '${name}'</button>
         </article>
       `)
       .join('')
