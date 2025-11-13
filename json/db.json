@@ -26,8 +26,8 @@
     {
       "id": "57f3",
       "date": "2025-11-06 21:00",
-      "name": "Mega Death-die",
-      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
+      "name": "Portrait Decay",
+      "description": "Screamo & Black metal verkar inte som en blandning som skulle passa någon, men Portrait Decay visar med sin EP 'III' att både emo's och skogspopulationen kan gå tillsammans och skapa något brutalt och fint!",
       "clubId": "f8ed"
     },
     {
@@ -101,7 +101,15 @@
       "description": "En show där grekiska myter möter musik och scenkonst. En resa genom antikens Grekland på ett modernt sätt.",
       "image": "./images/event3.jpg",
       "clubId": "gr01"
-    }
+},
+{
+      "id": "83dg",
+      "date": "2026-02-15 18:30",
+      "name": "Socialstyrelsen: svensk turne",
+      "description": "En scen som Kängpunken kan inte dö ut så länge vi har brillianta band som är redo att skrika tills öron faller av!",
+      "clubId": "f8ed"
+}
+
   ],
   "bookings": [
     {
