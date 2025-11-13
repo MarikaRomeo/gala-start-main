@@ -62,19 +62,26 @@ body {
     }
 
     .eventContent {
-        border: solid red 1px;
+        border: solid red 2px;
         border-radius: 20px;
         div {
             padding: 0px;
         }
         article {
             text-align: center;
+            border-bottom: 1px solid rgb(194, 0, 0);
+
+            &:last-child {
+                border-bottom: 0px;
+            }
         }
         button {
             color: rgb(255, 255, 255);
             background-color: rgb(48, 48, 48);
             border-color: rgb(100, 100, 100);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            margin-left: 10px;
+            margin-right: 10px;
             border-radius: 10px;
         }
     }
