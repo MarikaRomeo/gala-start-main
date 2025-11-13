@@ -1,3 +1,9 @@
+const CLUBIDTOHREFDICT = {
+  "5cc6": "../../html/country-club.html",
+  "t3ch": "../../html/techno.html",
+  "gr01": "../../html/greekclub.html"
+} 
+
 export default async function clubInfoAndEvents(clubId) {
   let name = '', description = '', backgroundPath = '';
   // if there is a clubId -> fetch the info about the club
@@ -23,23 +29,25 @@ export default async function clubInfoAndEvents(clubId) {
     return acc;
   },{}) 
 );
-  // return html
-  return `
-    <h1>${name}</h1>
-    <p>${description}</p>
-    <!-- <img src=${backgroundPath}> -->
-    <div>
-    <h2>Events</h2>
-    ${latestByClubId
-      .toSorted((a, b) => a.date > b.date ? 1 : -1)
-      .map(({ date, name, description }) => `
-        <article class="event">
-          <h3>${name} ${date}</h3>
-          <p>${description}</p>
-        </article>
-      `)
-      .join('')
-    }
-    </div>
-  `;
+
+
+// return html
+return `
+  <h1>${name}</h1>
+  <p>${description}</p>
+  <!-- <img src=${backgroundPath}> -->
+  <div>
+  <h2>Events</h2>
+  ${latestByClubId
+    .toSorted((a, b) => a.date > b.date ? 1 : -1)
+    .map(({ date, name, description, clubId}) => `
+      <article class="event">
+        <a href="${CLUBIDTOHREFDICT[clubId]}"><h3>${name} ${date}</h3></a>
+        <p>${description}</p>
+      </article>
+    `)
+    .join('')
+  }
+  </div>
+`;
 }
