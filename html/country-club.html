@@ -5,30 +5,29 @@
 <html lang="en">
 <body>
 <div id="countryContainer">
-<div class="container">
-  <div class="subContainer">
-
-      <div class="mainContainer">
-        <div class="main2">
-          <h4 class="headMenu">Country Klubben</h4>
-          <p class="headText">Välkommen till Country klubben! Här spelar vi countrymusik för att läka själen. <br>Anmäl dig redan idag, du hittar knappen längst ned på sidan.  </p>
-          
-          <div class="buttonContainer">
-            <button id="backToMainBtn" onClick="(function(){
-                window.location.href = 'index.html';
-                return false;
-                })();return false;">
-            </button>
-          </div>
-        </div>
-
-        <div class="content">
-          <div class="artists"><h4>Kommande evenemang</h4>
-            <div class="eventContent"><h4 class="contenth4">Gareth</h4></div>
-          </div>
-        </div>
-      </div>
+  <div class="buttonContainer">
+    <button id="backToMainBtn" title="Hemknapp" onClick="(function(){
+        window.location.href = 'index.html';
+        return false;
+        })();return false;">
+      Tillbaka till startsidan
+    </button>
   </div>
+<div class="container">
+
+  <div class="mainContainer">
+    <div class="main2">
+      <h4 class="headMenu">Country Klubben</h4>
+      <p class="headText">Välkommen till Country klubben!<br> Här spelar vi countrymusik från hela världen.</p>
+    </div>
+
+    <div class="content">
+      <div class="upcomingEvents"><h4>Kommande evenemang</h4></div>
+        <div class="eventContent"><h4 class="contenth4">Gareth</h4></div>
+      </div>
+    </div>
+  </div>
+
 </div> 
 </div>
   <script src="/js/pages/country-club.js"></script>
