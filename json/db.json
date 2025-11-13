@@ -29,27 +29,30 @@
       "date": "2025-11-06 21:00",
       "name": "Mega Death-die",
       "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
-      "clubId": "fg5i"
+      "clubId": "f8ed"
     },
     {
       "id": "67ui",
       "date": "2025-11-14 21:00",
-      "name": "Los Banditos",
-      "description": "Country kväll",
+      "name": "Gareth",
+      "description": "Country musik från Irland!",
+      "image": "../images/gareth.jpg",
       "clubId": "5cc6"
     },
     {
       "id": "65ui",
       "date": "2025-11-16 21:00",
-      "name": "Los Banditos2",
-      "description": "Country kvällar",
+      "name": "Morgan Wallen",
+      "description": "I’m The Problem Tour!",
+      "image": "../images/morgan-wallen.jpg",
       "clubId": "5cc6"
     },
     {
       "id": "dr45",
       "date": "2025-11-18 21:00",
-      "name": "Los Banditos3",
-      "description": "Country kvällarna",
+      "name": "Chris Stapleton",
+      "description": "Country, rock och blues!",
+      "image": "../images/chris-stapleton.jpg",
       "clubId": "5cc6"
     },
     {
