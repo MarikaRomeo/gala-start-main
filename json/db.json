@@ -1,16 +1,6 @@
 {
   "clubs": [
     {
-      "id": "a37c",
-      "name": "Jazz-klubben",
-      "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister."
-    },
-    {
-      "id": "fg5i",
-      "name": "Metal-klubben",
-      "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
-    },
-    {
       "id": "5cc6",
       "name": "Country-klubben",
       "description": "Countrymusik för att läka själen."
@@ -29,13 +19,6 @@
   ],
   "events": [
     {
-      "id": "43ac",
-      "date": "2025-11-05 19:00",
-      "name": "New Orleans-bandet",
-      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
-      "clubId": "a37c"
-    },
-    {
       "id": "57f3",
       "date": "2025-11-06 21:00",
       "name": "Mega Death-die",
@@ -48,13 +31,6 @@
       "name": "Los Banditos",
       "description": "Country kväll",
       "clubId": "5cc6"
-    },
-    {
-      "id": "43ac",
-      "date": "2025-11-01 19:00",
-      "name": "Fusion-jazzarna Corea's Disciples",
-      "description": "Cool fusion-jazz med en massa dim-ackord.",
-      "clubId": "a37c"
     },
     {
       "id": "65ui",
@@ -75,7 +51,7 @@
       "date": "2025-11-07 22:00",
       "name": "BUNT Live",
       "description": "Artisten BUNT tar över scenen med sina hypnotiska beats och futuristiska soundscapes.",
-      "image": "images/bunt-artist.jpg",
+      "image": "../images/bunt-artist.jpg",
       "clubId": "t3ch"
     },
     {
@@ -83,7 +59,7 @@
       "date": "2025-11-09 23:00",
       "name": "Fred Again",
       "description": "Den världsberömda DJ:n Fred Again kommer till Techno-klubben för en oförglömlig natt fylld med pulserande beats och energiska rytmer.",
-      "image": "images/fred-again.jpg",
+      "image": "../images/fred-again.jpg",
       "clubId": "t3ch"
     },
     {
@@ -91,7 +67,7 @@
       "date": "2025-11-12 21:30",
       "name": "Daft Punk",
       "description": "Den legendariska duon Daft Punk återvänder till Techno-klubben för en spektakulär kväll med deras ikoniska elektroniska sound och visuella shower.",
-      "image": "images/daft-punk.jpg",
+      "image": "../images/daft-punk.jpg",
       "clubId": "t3ch"
     }
   ],
