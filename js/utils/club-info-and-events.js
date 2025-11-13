@@ -1,7 +1,8 @@
 const CLUBIDTOHREFDICT = {
   "5cc6": "../../html/country-club.html",
   "t3ch": "../../html/techno.html",
-  "gr01": "../../html/greekclub.html"
+  "gr01": "../../html/greekclub.html",
+  "f8ed": "../../html/rock-club.html"
 } 
 
 export default async function clubInfoAndEvents(clubId) {
