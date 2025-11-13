@@ -1,14 +1,18 @@
-body.riktiga-rockare {
-    background-image: url(../../img/background-rock-club.jpg);
-    background-color: rgba(0, 0, 0, 0.95);    
-    background-blend-mode:overlay;
+body {
+    background-image: url(../../images/background-rock-club.jpg);
+    background-color: rgba(0, 0, 0, 0.95);
+    background-blend-mode: overlay;
     color: red;
 
-    a{
+    header {
+        text-align: center;
+    }
+
+    a {
         color: rgb(255, 255, 255);
     }
-    
-    div{
+
+    .container {
         width: 80vw;
         padding: 35px 30px 45px;
         padding-bottom: 45px;
@@ -16,10 +20,46 @@ body.riktiga-rockare {
         position: relative;
         margin-right: auto;
         margin-left: auto;
+        color: white;
         /*flex: 1;*/
+        /*display: flex;*/
 
-        h2{
-            text-align: center;         
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .bar {
+        /*background-color: rgb(57, 71, 71);*/
+        padding: 0px;
+        position: absolute; top: 5px; left: 5px;
+        display: inline-block;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 10px);
+
+            a {
+                flex: 0.1 auto;
+                text-align: center;
+                text-decoration: none;
+                padding: 0.5rem 0;
+                border-bottom: 2px solid currentColor;
+                
+            }
+                
+        }
+    }
+
+    .eventContent {
+        border: solid red 1px;
+        div {
+            padding: 0px;
+        }
+        article {
+            text-align: center;
         }
     }
 }
