@@ -1,3 +1,4 @@
+//Skapat en variable som associerar korrekt sökväg till varje hemsdia till dess respektive klubb-id
 const CLUBIDTOHREFDICT = {
   "5cc6": "../../html/country-club.html",
   "t3ch": "../../html/techno.html",
@@ -30,7 +31,6 @@ export default async function clubInfoAndEvents(clubId) {
     return acc;
   },{}) 
 );
-
 
 // return html
 return `

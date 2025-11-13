@@ -1,7 +1,7 @@
 body{
         background-image: url(../../images/background-country-club.png);
         margin: 0;
-    }
+}
 
 #countryContainer {
     display: block;
@@ -17,8 +17,6 @@ body{
         font-family: sans-serif;
         flex: 1;
     }
-
-    
 
     .mainContainer{
         flex: 1;
@@ -155,8 +153,6 @@ body{
         text-align: center;
     }
 
-
-
     .contenth4{
         font-family: 'Georgia', serif; 
         font-size: 18px;
@@ -183,5 +179,5 @@ body{
     }
     #backToMainBtn:hover {
         background-color: #21867a;
-        }
+    }
 }
