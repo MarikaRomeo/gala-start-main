@@ -6,9 +6,9 @@ async function clubEvents(clubId) {
   }
   let events =
     await (await fetch(url)).json();
-    events = events.filter((event) => {
-      return isNaN(event.id)
-    })
+  events = events.filter((event) => {
+    return isNaN(event.id)
+  })
   // return html 
   return `
     <div>
@@ -18,7 +18,7 @@ async function clubEvents(clubId) {
         <article class="event">
           <h2>${name} <br> ${date}</h2>
           <p>${description}</p>
-          <button type="button" onclick="window.location.href='booking-form.html'">Skaffa biljett för '${name}'</button>
+          <button type="button" onclick="window.location.href='booking-form-rock.html'">Skaffa biljett för '${name}'</button>
         </article>
       `)
       .join('')
@@ -29,13 +29,24 @@ async function clubEvents(clubId) {
 //Kallar på funktionen ovan och visar resultatet av eventinformationen i html-taggen .eventcontent
 document.addEventListener("DOMContentLoaded", async () => {
   const element = document.querySelector(".eventContent");
-  try{
+  try {
     //byt ut klubb-id i parentesen efter clubEvents för att visa era events och ändra ovan i querySelectorn vart i er html den ska visas!
     const events = await clubEvents("f8ed");
-    if(events){
+    if (events) {
       element.innerHTML = events;
     }
-  }catch {
+  } catch {
     element.innerHTML = `<p>Någonting gick fel!</p>`
   }
 });
+
+// open the booking form
+const openBookingWindow = (eventTitle = 'Booking form Rock Club Experience') => {
+  const baseUrl = new URL('booking-form.html', window.location.href);
+  baseUrl.searchParams.set('event', eventTitle);
+  window.open(
+    baseUrl.toString(),
+    'RiktigaRockareClubBooking',
+    'width=520,height=640,menubar=no,toolbar=no,location=no,status=no'
+  );
+};
