@@ -6,6 +6,7 @@ async function clubEvents(clubId) {
   }
   const events =
     await (await fetch(url)).json();
+    console.log(JSON.stringify.events);
   // return html 
   return `
     ${events

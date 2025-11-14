@@ -98,18 +98,16 @@
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
-    },
+    },     
     {
-        },
-        {
       "id": "grE3",
       "date": "2026-02-15 18:30",
       "name": "Myth och musik",
       "description": "En show där grekiska myter möter musik och scenkonst. En resa genom antikens Grekland på ett modernt sätt.",
       "image": "./images/event3.jpg",
       "clubId": "gr01"
-},
-{
+    },
+    {
       "id": "83dg",
       "date": "2026-02-15 18:30",
       "name": "Socialstyrelsen: svensk turne",
@@ -148,8 +146,9 @@
       "image": "../images/gigi-dag.jpg",
       "clubId": "it01"
     }
-  ],
-  "bookings": [
+],
+
+"bookings": [
     {
       "id": "538a",
       "name": "Marika",
