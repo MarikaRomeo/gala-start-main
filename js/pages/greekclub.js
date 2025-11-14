@@ -27,11 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
           formDiv.classList.add("booking-form");
 
           formDiv.innerHTML = `
-            <h3>Boka biljett för ${event.title}</h3>
-            <input type="text" id="name-${event.id}" placeholder="Ditt namn" required>
-            <input type="email" id="email-${event.id}" placeholder="Din e-post" required>
-            <button class="confirm-btn">Bekräfta bokning</button>
-          `;
+  <h3>Boka biljett för ${event.title}</h3>
+  <input type="text" id="name-${event.id}" placeholder="Ditt namn" required>
+  <input type="email" id="email-${event.id}" placeholder="Din e-post" required>
+  <input type="number" id="quantity-${event.id}" placeholder="Antal biljetter" min="1" value="1" required>
+  <button class="confirm-btn">Bekräfta bokning</button>
+`;
+
 
           
           if (eventDiv.querySelector(".booking-form")) return;
@@ -43,28 +45,45 @@ document.addEventListener("DOMContentLoaded", () => {
           confirmBtn.addEventListener("click", () => {
             const name = document.getElementById(`name-${event.id}`).value;
             const email = document.getElementById(`email-${event.id}`).value;
+            const quantity = document.getElementById(`quantity-${event.id}`).value;
 
-            if (!name || !email) {
-              alert("Fyll i namn och e-post för att boka!");
-              return;
-            }
+if (!name || !email || quantity < 1) {
+  alert("Fyll i namn, e-post och antal biljetter.");
+  return;
+}
+
+            
 
             const bookingData = {
-              eventId: event.id,
-              eventTitle: event.title,
-              name: name,
-              email: email
-            };
+  eventId: event.id,
+  eventTitle: event.title,
+  name: name,
+  email: email,
+  quantity: Number(quantity)
+};
 
-            fetch("http://localhost:3001/bookings", {
+
+            fetch("http://localhost:3000/bookings", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(bookingData)
             })
               .then(response => response.json())
               .then(() => {
-                alert(`Tack ${name}! Din bokning till "${event.title}" är bekräftad.`);
+                alert(`Tack ${name}! Din bokning för eventet "${event.title}" har registrerats.`);
                 formDiv.remove();
+
+                const confirmation = document.createElement("p");
+                confirmation.textContent = "Din bokning har registrerats!";
+                confirmation.style.color = "green";
+                confirmation.style.fontWeight = "bold";
+                confirmation.style.marginTop = "10px";
+
+                eventDiv.appendChild(confirmation);
+
+                setTimeout(() => {
+                  confirmation.remove();
+                }, 6000);
               })
               .catch(error => {
                 console.error("Fel vid bokning:", error);
