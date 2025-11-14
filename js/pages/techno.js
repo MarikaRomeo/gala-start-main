@@ -41,6 +41,11 @@ async function showTechno() {
       <button class="back-to-main-btn" onclick="goToMainPage()">
         ← Tillbaka till huvudsidan
       </button>
+      
+      <button class="admin-btn" onclick="window.location.href='../html/create-club.html'">
+        🎛️ Skapa event (Admin)
+      </button>
+      
       <h1>${club.name}</h1>
       <p>${club.description}</p>
 
@@ -72,6 +77,44 @@ function generateBookingNumber() {
   return `${prefix}-${timestamp}-${randomNum}`;
 }
 
+
+function createClub() {
+  return `
+    <h2>Skapa event</h2>
+    <form id="create-club">
+      <input name="eventName"   placeholder="Eventnamn">
+      <input name="clubID"      placeholder="KlubbID: XXXX">
+      <input name="eventDate"   placeholder="När är eventet?" type="date">
+
+      <textarea name="eventDescription" placeholder="Beskrivning av eventet"></textarea>
+
+      <input type="submit" value="Skapa"> 
+    </form>
+  `;
+}
+
+
+async function listClubs() {
+  const clubsInDB = await (await fetch('http://localhost:3000/clubs', { method: 'GET' })).json();
+  const simplified = clubsInDB.map(({ id, name }) => { id: clubID; name: clubName; });
+}
+
+
+async function submitForm(event) {
+  const target = event.target;
+
+  const name = target.eventName.value;
+  const description = target.eventDescription.value;
+  const date = target.eventDate.value;
+  const clubID = target.clubID.value;
+  await fetch('http://localhost:3000/events', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ date, name, description, clubID })
+  });
+  window.location.replace('/html/index.html');
+}
+
 // Funktion för att boka biljetter
 function bookTicket(eventId, eventName) {
   const bookingNumber = generateBookingNumber();
@@ -88,5 +131,12 @@ function bookTicket(eventId, eventName) {
 function goToMainPage() {
   window.location.href = 'index.html';
 }
+
+
+document.body.addEventListener('submit', async event => {
+  if (!event.target.closest('#create-club')) { return; }
+  event.preventDefault();
+  await submitForm(event);
+});
 
 window.addEventListener('load', showTechno);
