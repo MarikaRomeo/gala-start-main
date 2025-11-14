@@ -98,7 +98,7 @@
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
-    },     
+    },
     {
       "id": "grE3",
       "date": "2026-02-15 18:30",
@@ -145,10 +145,16 @@
       "description": "En kvall dedikerad till Gigi D'Agostino och hans ikoniska latar.",
       "image": "../images/gigi-dag.jpg",
       "clubId": "it01"
+    },
+    {
+      "id": "27dc",
+      "date": "2025-12-12",
+      "name": "hej",
+      "description": "test",
+      "clubID": "t3ch"
     }
-],
-
-"bookings": [
+  ],
+  "bookings": [
     {
       "id": "538a",
       "name": "Marika",

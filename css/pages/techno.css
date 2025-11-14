@@ -137,6 +137,36 @@ time {
   transform: translateY(0) scale(0.98);
 }
 
+/* Admin-knapp styling - matchar back-to-main-btn */
+.admin-btn {
+  background: rgba(0, 255, 255, 0.1);
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #0ff4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  float: right;
+}
+
+.admin-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 20px #0ff6;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.admin-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
 /* Artist-specifika neonfärger */
 .artist-bunt {
   border-left: 4px solid #ffff00;

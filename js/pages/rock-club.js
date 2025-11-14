@@ -7,8 +7,8 @@ async function clubEvents(clubId) {
   let events =
     await (await fetch(url)).json();
   events = events.filter((event) => {
-    return isNaN(event.id)
-  })
+    return isNaN(event.id);
+  });
   // return html 
   return `
     <div>
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       element.innerHTML = events;
     }
   } catch {
-    element.innerHTML = `<p>Någonting gick fel!</p>`
+    element.innerHTML = `<p>Någonting gick fel!</p>`;
   }
 });
 
