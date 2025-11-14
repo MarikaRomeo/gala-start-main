@@ -136,6 +136,14 @@
       "name": "test",
       "email": "makedasathanasios@gmail.com",
       "quantity": 10
+    },
+    {
+      "id": "31aa",
+      "eventId": 2,
+      "eventTitle": "Sirtaki och bouzouki",
+      "name": "test",
+      "email": "makedasathanasios@gmail.com",
+      "quantity": 1
     }
   ]
 }
