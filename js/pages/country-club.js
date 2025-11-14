@@ -27,7 +27,7 @@ async function clubEvents(clubId) {
     }
   `;
 }
-
+//funktion för att generera bokningsnummer.
 function generateCountryBookingNumber() {
   const prefix = 'Country';
   const timestamp = Date.now().toString().slice(-6); // Senaste 6 siffrorna av timestamp
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
+//Gamla meny funktionen för att visa min html sida och ta in min events del till rätt html tag. 
 
 
 // export default async function countryClub() {
