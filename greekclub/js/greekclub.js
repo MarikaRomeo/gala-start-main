@@ -63,15 +63,27 @@ if (!name || !email || quantity < 1) {
 };
 
 
-            fetch("http://localhost:3001/bookings", {
+            fetch("http://localhost:3000/bookings", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(bookingData)
             })
               .then(response => response.json())
               .then(() => {
-                alert(`Tack ${name}! Din bokning till "${event.title}" är bekräftad.`);
+                alert(`Tack ${name}! Din bokning för eventet "${event.title}" har registrerats.`);
                 formDiv.remove();
+
+                const confirmation = document.createElement("p");
+                confirmation.textContent = "Din bokning har registrerats!";
+                confirmation.style.color = "green";
+                confirmation.style.fontWeight = "bold";
+                confirmation.style.marginTop = "10px";
+
+                eventDiv.appendChild(confirmation);
+
+                setTimeout(() => {
+                  confirmation.remove();
+                }, 6000);
               })
               .catch(error => {
                 console.error("Fel vid bokning:", error);

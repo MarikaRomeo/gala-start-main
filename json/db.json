@@ -26,7 +26,6 @@
       "name": "Greek Club",
       "description": "Upplev grekisk musik, dans och kultur."
     }
-
   ],
   "events": [
     {
@@ -95,24 +94,23 @@
       "description": "En magisk kväll fylld med grekisk musik, ljus och känslor. Upplev de mest älskade melodierna från Aten till Thessaloniki – med levande orkester och dansare i traditionella dräkter.",
       "image": "./images/event1.jpg",
       "clubId": "gr01"
-},
-{
+    },
+    {
       "id": "grE2",
       "date": "2025-12-13 20:00",
       "name": "Sirtaki och bouzouki",
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
-},
-{
+    },
+    {
       "id": "grE3",
       "date": "2026-02-15 18:30",
       "name": "Myth och musik",
       "description": "En show där grekiska myter möter musik och scenkonst. En resa genom antikens Grekland på ett modernt sätt.",
       "image": "./images/event3.jpg",
       "clubId": "gr01"
-}
-
+    }
   ],
   "bookings": [
     {
@@ -122,6 +120,22 @@
       "tickets": 1,
       "event": "Tribute Band Zucchero – 10 December 20:00",
       "createdAt": "2025-11-09T21:42:58.876Z"
+    },
+    {
+      "id": "5ac4",
+      "eventId": 2,
+      "eventTitle": "Sirtaki och bouzouki",
+      "name": "test",
+      "email": "makedasathanasios@gmail.com",
+      "quantity": 2
+    },
+    {
+      "id": "bc8f",
+      "eventId": 3,
+      "eventTitle": "Myth och musik",
+      "name": "test",
+      "email": "makedasathanasios@gmail.com",
+      "quantity": 10
     }
   ]
 }
