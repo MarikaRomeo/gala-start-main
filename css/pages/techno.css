@@ -1,4 +1,4 @@
-/* === Techcno Klubbdesign === */
+/* === Techno Klubbdesign - Fullskärm === */
 body.club-techcno {
   background-color: #050505;
   color: #e0e0e0;
@@ -6,10 +6,8 @@ body.club-techcno {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+  display: block;
+  /* Ta bort flex för fullskärmsutseende */
 }
 
 
@@ -20,10 +18,12 @@ body.club-techcno {
   box-shadow: 0 0 15px #0ff6;
   border-radius: 12px;
   padding: 2rem;
-  max-width: 800px;
-  margin: 3rem auto;
-  width: 90%;
+  max-width: none;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
   animation: fadeIn 1s ease;
+  box-sizing: border-box;
 }
 
 h1,
@@ -248,6 +248,37 @@ time {
     0 0 10px #0ff,
     0 0 20px #0ff,
     0 0 40px #0ff;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+    border-radius: 0;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  .back-to-main-btn {
+    float: none;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .card {
+    padding: 3rem 4rem;
+    border-radius: 0;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 }
 
 /* Enkel fade-in animation */

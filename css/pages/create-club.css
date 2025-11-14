@@ -1,0 +1,13 @@
+body {
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    height: 80px;
+  }
+
+}
