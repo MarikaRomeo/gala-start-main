@@ -90,14 +90,16 @@
       "description": "En magisk kväll fylld med grekisk musik, ljus och känslor. Upplev de mest älskade melodierna från Aten till Thessaloniki – med levande orkester och dansare i traditionella dräkter.",
       "image": "./images/event1.jpg",
       "clubId": "gr01"
-        },
-        {
+    },
+    {
       "id": "grE2",
       "date": "2025-12-13 20:00",
       "name": "Sirtaki och bouzouki",
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
+    },
+    {
         },
         {
       "id": "grE3",
@@ -161,6 +163,32 @@
       "name": "test",
       "email": "marika.romeo@hotmail.com",
       "tickets": 1,
+      "event": "Tribute Band Zucchero – 10 December 20:00",
+      "createdAt": "2025-11-09T21:42:58.876Z"
+    },
+    {
+      "id": "5ac4",
+      "eventId": 2,
+      "eventTitle": "Sirtaki och bouzouki",
+      "name": "test",
+      "email": "makedasathanasios@gmail.com",
+      "quantity": 2
+    },
+    {
+      "id": "bc8f",
+      "eventId": 3,
+      "eventTitle": "Myth och musik",
+      "name": "test",
+      "email": "makedasathanasios@gmail.com",
+      "quantity": 10
+    },
+    {
+      "id": "31aa",
+      "eventId": 2,
+      "eventTitle": "Sirtaki och bouzouki",
+      "name": "test",
+      "email": "makedasathanasios@gmail.com",
+      "quantity": 1,
       "event": "Top 40 - Best Italian Hits - 20 november 2025 kl 18:00",
       "bookingNumber": "2025-11-13T21:00:15.610Z"
     },
