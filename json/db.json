@@ -98,7 +98,7 @@
       "description": "En kväll fylld av rytm, glädje och rörelse med levande bouzouki-band. Perfekt för både dansälskare och nybörjare!",
       "image": "./images/event2.jpg",
       "clubId": "gr01"
-    },     
+    },
     {
       "id": "grE3",
       "date": "2026-02-15 18:30",
@@ -146,9 +146,8 @@
       "image": "../images/gigi-dag.jpg",
       "clubId": "it01"
     }
-],
-
-"bookings": [
+  ],
+  "bookings": [
     {
       "id": "538a",
       "name": "Marika",
@@ -230,6 +229,14 @@
       "tickets": 4,
       "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
       "bookingNumber": "BK-251113-I4AZ"
+    },
+    {
+      "id": "5026",
+      "eventId": 1,
+      "eventTitle": "Grekisk musiknatt",
+      "name": "dsgs",
+      "email": "dsf@gmail.com",
+      "quantity": 1
     }
   ]
 }
