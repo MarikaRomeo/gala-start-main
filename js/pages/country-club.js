@@ -6,28 +6,128 @@ async function clubEvents(clubId) {
   }
   const events =
     await (await fetch(url)).json();
-    console.log(JSON.stringify.events);
   // return html 
   return `
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
-      .map(({ date, name, description, image, eventId }) => `
+      .map(({ date, name, description, image, id }) => {
+        const imagepath = image ?? "../images/default-country-picture.jpg"
+        const dateFormatted = date.replace("T", " ")
+
+        return `
         <article class="event">
           <h3>${name} <br></h3> 
-          ${image ? `<img src="${image}" alt="${image}" class="event-image">` : ''}
-          <h3>${date}</h3>
+          <img src="${imagepath}" alt="Bild på eventet" class="event-image">
+          <h3>${dateFormatted}</h3>
           <div class="eventImageDescriptionContainer">
             <p class="eventImageDescription">${description}</p>
-            <button class="book-country-ticket-btn" onclick="bookCountryTicket('${eventId}', '${name}')">
+            <button class="book-country-ticket-btn" onclick="bookCountryTicket('${id}', '${name}')">
               Boka Biljett
             </button>
           </div>
         </article>
-      `)
+      `;
+      })
       .join('')
     }
   `;
 }
+
+async function adminClubEvents(clubId) {
+  let url = 'http://localhost:3000/events';
+  if (clubId) {
+    url += '?clubId=' + clubId;
+  }
+  const events =
+    await (await fetch(url)).json();
+  // return html 
+  return `
+    ${events
+      .toSorted((a, b) => a.date > b.date ? 1 : -1)
+      .map(({ date, name, description, image, id }) => {
+        const imagepath = image ?? "../images/default-country-picture.jpg"
+        const dateFormatted = date.replace("T", " ")
+
+        return `
+        <article class="event">
+          <h3>${name} <br></h3> 
+          <img src="${imagepath}" alt="Bild på eventet" class="event-image">
+          <h3>${dateFormatted}</h3>
+          <div class="eventImageDescriptionContainer">
+            <p class="eventImageDescription">${description}</p>
+            <button class="delete-event-btn" onclick="deleteEvent('${id}')">
+              Ta bort event
+            </button>
+          </div>
+        </article>
+      `;
+      })
+      .join('')
+    }
+    <div class="countryEventCreationForm">
+    <h1>Skapa event</h1>
+    <form id="addEventForm" onsubmit="addEvent(); return false;">
+      <label for="name">Eventnamn: </label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="date">Datum för eventet: </label><br>
+      <input type="datetime-local" id="date" name="date"><br>
+      <label for="description">Eventbeskrivning: </label><br>
+      <input type="text" id="description" name="description"><br>
+      <input type="submit" value="Skapa" id="skapaEventKnapp">
+    </form>
+    </div>
+  `;
+}
+
+async function addEvent() {
+  const url = 'http://localhost:3000/events';
+  const clubId = "5cc6"
+
+  // Skapa ett FormData objekt utifrån elementet
+  const form  = document.getElementById("addEventForm")
+  const formData = new FormData(form)
+
+  // Debug log
+  console.log(`Lägger till ${formData.entries()}..`)
+
+  // Skapa ett objekt utifrån key-values i FormData objektet och gör om till json-string
+  const newEvent = {clubId: clubId};
+  formData.forEach((value, key) => newEvent[key] = value);
+  const postBody = JSON.stringify(newEvent);
+
+  // Skicka POST-request till json-server url:en, vi gör samma sen med delete
+  try {
+    const response = await fetch(url, {method: "POST", body: postBody});
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    populateEventContent(isAdminView);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+async function deleteEvent(eventId) {
+  const shouldDelete = confirm("Är du säker på att du vill ta bort detta event?")
+  if (!shouldDelete) return
+  console.log(`Deleting event ${eventId}`)
+const url = `http://localhost:3000/events/${eventId}`;
+  try {
+    const response = await fetch(url, {method: "Delete"});
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    populateEventContent(isAdminView);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+
 //funktion för att generera bokningsnummer.
 function generateCountryBookingNumber() {
   const prefix = 'Country';
@@ -47,18 +147,42 @@ function bookCountryTicket(eventId, eventName) {
 
   console.log(`Biljett bokad - Event: ${eventName}, Event ID: ${eventId}, Bokningsnummer: ${bookingNumber}`);
 }
-//Kallar på funktionen ovan och visar resultatet av eventinformationen i html-taggen .eventcontent
-document.addEventListener("DOMContentLoaded", async () => {
+
+async function populateEventContent(isAdminView) {
+  //Kallar på funktionen ovan och visar resultatet av eventinformationen i html-taggen .eventcontent
   const element = document.querySelector(".eventContent");
   try{
-    //byt ut klubb-id i parentesen efter clubEvents för att visa era events och ändra ovan i querySelectorn vart i er html den ska visas!
-    const events = await clubEvents("5cc6");
+    let events
+    if (isAdminView) {
+      events = await adminClubEvents("5cc6")
+    } else {
+      events = await clubEvents("5cc6")
+    }
     if(events){
       element.innerHTML = events;
     }
-  }catch {
+    }catch {
     element.innerHTML = `<p>Någonting gick fel!</p>`
-  }
+    }
+};
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await populateEventContent(isAdminView)
+});
+
+
+
+let isAdminView = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const actionButton = document.getElementById('actionButton');
+  // const content = document.getElementById('content');
+
+  actionButton.addEventListener('click', async () => {
+    isAdminView = !isAdminView
+    await populateEventContent(isAdminView)
+    actionButton.textContent = isAdminView ? 'Logout' : 'Admin'
+  });
 });
 
 
@@ -71,8 +195,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
-//Gamla meny funktionen för att visa min html sida och ta in min events del till rätt html tag. 
+//Gamla meny funktionen för att visa min html sida och ta in mina events del till rätt html tag.
 
 
 // export default async function countryClub() {
