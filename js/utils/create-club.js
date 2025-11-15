@@ -22,11 +22,11 @@ export default async function createEvent(clubID) {
     <h2>Skapa event</h2>
     <form id="create-event">
       <p>Skapa event för ${clubID}</p>
-      <input name="eventName"   placeholder="Eventnamn">
+      <input name="eventName"   placeholder="Eventnamn" required>
       <!--<input name="clubID"      placeholder="KlubbID: XXXX">-->
-      <input name="eventDate"   placeholder="När är eventet?" type="date">
+      <input name="eventDate"   placeholder="När är eventet?" type="date" required>
 
-      <textarea name="eventDescription" placeholder="Beskrivning av eventet"></textarea>
+      <textarea name="eventDescription" placeholder="Beskrivning av eventet" required></textarea>
 
       <input type="submit" value="Skapa"> 
     </form>

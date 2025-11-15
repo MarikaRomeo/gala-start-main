@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="../css/pages/create-club.css">
 </head>
 <body>
     <h2>Skapa event</h2>
     <form id="create-event">
       <input name="eventName"   placeholder="Eventnamn" required>
-      <input name="clubID"      placeholder="KlubbID: XXXX" required>
+      <!--<input name="clubID"      placeholder="KlubbID: XXXX" required>-->
+      <select name="clubID">
+        <option value="5cc6">Country Music</option>
+        <option value="t3ch">Techno</option>
+        <option value="gr01">Greek Club</option>
+        <option value="f8ed">Riktiga Rockare</option>
+        <option value="it01">Radio Italia</option>
+      </select>
       <input name="eventDate"   placeholder="När är eventet?" type="date" required>
 
       <textarea name="eventDescription" placeholder="Beskrivning av eventet" required></textarea>
