@@ -4,12 +4,26 @@
 //- Ingen check att clubbID stämmer överens med någon existerande klubb
 //- 
 
-export default async function createClub() { 
+export default async function createEvent(clubID) {
+  const clubIDNameDict = {
+  "5cc6": "Country Music",
+  "t3ch": "Techno",
+  "gr01": "Greek Club",
+  "f8ed": "Riktiga Rockare",
+  "it01": "Radio Italia"
+  } 
+
+  if(clubID in clubIDNameDict){ //om clubID finns I clubIDNameDict, returera true. Älskar JS hjälpfunktioner
+    const clubName = clubIDNameDict[clubID]
+    clubID = clubName;
+  }
+
   return `
     <h2>Skapa event</h2>
-    <form id="create-club">
+    <form id="create-event">
+      <p>Skapa event för ${clubID}</p>
       <input name="eventName"   placeholder="Eventnamn">
-      <input name="clubID"      placeholder="KlubbID: XXXX">
+      <!--<input name="clubID"      placeholder="KlubbID: XXXX">-->
       <input name="eventDate"   placeholder="När är eventet?" type="date">
 
       <textarea name="eventDescription" placeholder="Beskrivning av eventet"></textarea>
@@ -43,7 +57,7 @@ async function submitForm(event) {
 
 // add event listener
 document.body.addEventListener('submit', async event => {
-  if (!event.target.closest('#create-club')) { return; }
+  if (!event.target.closest('#create-event')) { return; }
   event.preventDefault();
   await submitForm(event);
 });
