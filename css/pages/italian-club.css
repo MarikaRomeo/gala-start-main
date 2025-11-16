@@ -64,7 +64,10 @@ nav a:hover {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;        /* ← IMPORTANTE per togliere la sottolineatura */
+  display: inline-block;        /* ← Per far comportare <a> come un bottone */
 }
+
 
 .club {
   background-color: rgba(199, 82, 102, 0.15); 
