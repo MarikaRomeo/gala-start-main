@@ -10,7 +10,7 @@
 
     const params = new URLSearchParams(window.location.search);
     const selectedEvent =
-        params.get("event")?.trim() || "Portrait Decay";
+        params.get("event")?.trim() || "Riktiga Rockare";
 
     eventNameField.value = selectedEvent;
 

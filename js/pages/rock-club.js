@@ -1,14 +1,8 @@
 //Funktion för att enbart hämta eventinformation.
 async function clubEvents(clubId) {
-  let url = 'http://localhost:3000/events';
-  if (clubId) {
-    url += '?clubId=' + clubId;
-  }
-  let events =
+  const url = 'http://localhost:3000/events?clubId=' + clubId;
+  const events =
     await (await fetch(url)).json();
-  events = events.filter((event) => {
-    return isNaN(event.id);
-  });
   // return html 
   return `
     <div>
@@ -39,14 +33,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     element.innerHTML = `<p>Någonting gick fel!</p>`;
   }
 });
-
-// open the booking form
-const openBookingWindow = (eventTitle = 'Booking form Rock Club Experience') => {
-  const baseUrl = new URL('booking-form.html', window.location.href);
-  baseUrl.searchParams.set('event', eventTitle);
-  window.open(
-    baseUrl.toString(),
-    'RiktigaRockareClubBooking',
-    'width=520,height=640,menubar=no,toolbar=no,location=no,status=no'
-  );
-};

@@ -13,7 +13,7 @@ export default async function createEvent(clubID) {
   "it01": "Radio Italia"
   } 
 
-  if(clubID in clubIDNameDict){ //om clubID finns I clubIDNameDict, returera true. Älskar JS hjälpfunktioner
+  if(clubID in clubIDNameDict){ 
     const clubName = clubIDNameDict[clubID]
     clubID = clubName;
   }
