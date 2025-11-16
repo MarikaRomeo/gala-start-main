@@ -45,6 +45,23 @@ small {
   margin-top: 1rem;
 }
 
+.eventContent {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.eventImageDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eventImageDescription {
+  line-height: 1.6;
+  margin: 0;
+}
+
 .event {
   background: rgba(0, 0, 0, 0.5);
   border-left: 4px solid #0ff;
@@ -100,9 +117,9 @@ time {
 }
 
 .book-ticket-btn:hover {
-  background: linear-gradient(45deg, #00ffff, #0099ff);
-  box-shadow: 0 0 25px #0ff8;
-  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(45deg, #44ffff, #44dddd);
+  box-shadow: 0 0 25px #0ff6;
+  transform: scale(1.02);
 }
 
 .book-ticket-btn:active {
@@ -167,6 +184,141 @@ time {
   transform: translateY(0) scale(0.98);
 }
 
+/* Admin-knapp styling */
+.admin-btn {
+  background: rgba(0, 255, 255, 0.1);
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #0ff4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  float: right;
+}
+
+.admin-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 20px #0ff6;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.admin-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Delete event knapp */
+.delete-event-btn {
+  background: linear-gradient(45deg, #ff0066, #cc0044);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #ff006644;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.delete-event-btn:hover {
+  background: linear-gradient(45deg, #ff3388, #dd2266);
+  box-shadow: 0 0 25px #ff006688;
+  transform: scale(1.02);
+}
+
+.delete-event-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Formulär för att skapa events */
+.technoEventCreationForm {
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid #0ff;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 20px #0ff4;
+}
+
+.technoEventCreationForm h1 {
+  color: #0ff;
+  text-shadow: 0 0 15px #0ff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.technoEventCreationForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.technoEventCreationForm label {
+  color: #0ff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.technoEventCreationForm input[type="text"],
+.technoEventCreationForm input[type="datetime-local"] {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #0ff;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.technoEventCreationForm input[type="text"]:focus,
+.technoEventCreationForm input[type="datetime-local"]:focus {
+  outline: none;
+  box-shadow: 0 0 15px #0ff6;
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.technoEventCreationForm input[type="submit"] {
+  background: linear-gradient(45deg, #0ff, #00cccc);
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #0ff4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.technoEventCreationForm input[type="submit"]:hover {
+  background: linear-gradient(45deg, #44ffff, #44dddd);
+  box-shadow: 0 0 25px #0ff6;
+  transform: scale(1.02);
+}
+
+.technoEventCreationForm input[type="submit"]:active {
+  transform: translateY(0) scale(0.98);
+}
+
 /* Artist-specifika neonfärger */
 .artist-bunt {
   border-left: 4px solid #ffff00;
@@ -200,6 +352,7 @@ time {
 .artist-bunt .book-ticket-btn:hover {
   background: linear-gradient(45deg, #ffff44, #ffdd44);
   box-shadow: 0 0 25px #ffff0088;
+  transform: scale(1.02);
 }
 
 .artist-fred {
@@ -234,6 +387,7 @@ time {
 .artist-fred .book-ticket-btn:hover {
   background: linear-gradient(45deg, #44ff44, #44dd44);
   box-shadow: 0 0 25px #00ff0088;
+  transform: scale(1.02);
 }
 
 .artist-daft {
@@ -268,6 +422,7 @@ time {
 .artist-daft .book-ticket-btn:hover {
   background: linear-gradient(45deg, #ff44ff, #dd44dd);
   box-shadow: 0 0 25px #ff00ff88;
+  transform: scale(1.02);
 }
 
 /* Glow-effekt för text */
