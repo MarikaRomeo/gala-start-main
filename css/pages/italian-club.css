@@ -32,14 +32,19 @@ h2 {
 
 /* ====== Admin Form ====== */
 .admin-event-form {
-  margin: 30px auto 10px;
-  max-width: 720px;
+  margin: 20px 0;
+  width: 45%;
+  min-width: 320px;
+  min-height: 320px;
   background: rgba(255, 218, 224, 0.08);
   border: 1px solid rgba(255, 218, 224, 0.25);
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .admin-event-form label {
@@ -53,12 +58,19 @@ h2 {
 
 .admin-event-form input[type="text"],
 .admin-event-form input[type="datetime-local"] {
+  width: 100%;
   padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid rgba(255, 218, 224, 0.4);
   background-color: rgba(255, 218, 224, 0.08);
   color: #fffdf8;
   font-size: 0.95rem;
+}
+
+.admin-event-form .gala-btn {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 52px;
 }
 
 /* ====== NAV ====== */
@@ -85,6 +97,7 @@ h2 {
 }
 
 .gala-btn {
+  margin-top: 16px;
   padding: 12px 28px;
   border: none;
   border-radius: 999px;
@@ -99,6 +112,8 @@ h2 {
   align-items: center;
   justify-content: center;
   min-height: 48px;
+  min-width: 180px;
+  text-align: center;
 }
 
 .gala-btn:hover {
@@ -144,6 +159,12 @@ img {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  min-width: 180px;
+  text-align: center;
 }
 
 .book-btn:hover {
