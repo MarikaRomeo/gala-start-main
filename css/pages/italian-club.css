@@ -35,7 +35,7 @@ h2 {
   margin: 20px 0;
   width: 45%;
   min-width: 320px;
-  min-height: 320px;
+  min-height: 420px;
   background: rgba(255, 218, 224, 0.08);
   border: 1px solid rgba(255, 218, 224, 0.25);
   border-radius: 16px;
@@ -80,6 +80,7 @@ h2 {
   justify-content: center;
   gap: 20px;
   padding: 40px;
+  align-items: flex-start;
 }
 
 .italian-page nav a {
@@ -89,6 +90,14 @@ h2 {
   padding: 6px 12px;
   border-radius: 10px;
   transition: all 0.3s ease;
+}
+
+.italian-page #italian-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .italian-page nav a:hover {
