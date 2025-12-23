@@ -145,114 +145,16 @@
       "description": "En kvall dedikerad till Gigi D'Agostino och hans ikoniska latar.",
       "image": "../images/gigi-dag.jpg",
       "clubId": "it01"
-    },
-    {
-      "id": "27dc",
-      "date": "2025-12-12",
-      "name": "hej",
-      "description": "test",
-      "clubID": "t3ch"
     }
   ],
   "bookings": [
     {
-      "id": "538a",
-      "name": "Marika",
-      "email": "marika.romeo@hotmail.com",
-      "tickets": 1,
-      "event": "Top 40 - Best Italian Hits - 20 november 2025 kl 18:00",
-      "bookingNumber": "2025-11-13T20:58:59.562Z"
-    },
-    {
-      "id": "30b3",
-      "name": "test",
-      "email": "marika.romeo@hotmail.com",
-      "tickets": 1,
-      "event": "Tribute Band Zucchero – 10 December 20:00",
-      "createdAt": "2025-11-09T21:42:58.876Z"
-    },
-    {
-      "id": "5ac4",
-      "eventId": 2,
-      "eventTitle": "Sirtaki och bouzouki",
-      "name": "test",
-      "email": "makedasathanasios@gmail.com",
-      "quantity": 2
-    },
-    {
-      "id": "bc8f",
-      "eventId": 3,
-      "eventTitle": "Myth och musik",
-      "name": "test",
-      "email": "makedasathanasios@gmail.com",
-      "quantity": 10
-    },
-    {
-      "id": "31aa",
-      "eventId": 2,
-      "eventTitle": "Sirtaki och bouzouki",
-      "name": "test",
-      "email": "makedasathanasios@gmail.com",
-      "quantity": 1,
-      "event": "Top 40 - Best Italian Hits - 20 november 2025 kl 18:00",
-      "bookingNumber": "2025-11-13T21:00:15.610Z"
-    },
-    {
-      "id": "5382",
-      "name": "hiug",
-      "email": "kjbkg",
-      "tickets": 1,
+      "id": "74e6",
+      "name": "Marika Romeo",
+      "email": "marika.romeo@hej.se",
+      "tickets": 3,
       "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
-      "bookingNumber": "2025-11-13T21:06:00.504Z"
-    },
-    {
-      "id": "1936",
-      "name": "iugjhfuyv",
-      "email": "jkbkhhv",
-      "tickets": 1,
-      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
-      "bookingNumber": "2025-11-13T21:07:17.152Z"
-    },
-    {
-      "id": "7d6f",
-      "name": "sfhoasch",
-      "email": "szczscmzkscn",
-      "tickets": 1,
-      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
-      "bookingNumber": "2025-11-13T21:11:42.761Z"
-    },
-    {
-      "id": "a1f3",
-      "name": "ewfpoajfpiaf",
-      "email": "aflkafhhasc",
-      "tickets": 1,
-      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
-      "bookingNumber": "d82da5d7-5118-4512-b3da-b47c64cdae2c"
-    },
-    {
-      "id": "d23b",
-      "name": "Test",
-      "email": "test@gmail.com",
-      "tickets": 4,
-      "event": "Italo Disco 90-2000 - 15 november 2025 kl 22:00",
-      "bookingNumber": "BK-251113-I4AZ"
-    },
-    {
-      "id": "5026",
-      "eventId": 1,
-      "eventTitle": "Grekisk musiknatt",
-      "name": "dsgs",
-      "email": "dsf@gmail.com",
-      "quantity": 1
-    },
-    {
-      "id": "TECH-948004-550",
-      "eventId": "t1ch",
-      "eventName": "BUNT Live",
-      "clubId": "t3ch",
-      "bookingNumber": "TECH-948004-550",
-      "bookingDate": "2025-11-16T11:35:48.004Z",
-      "status": "confirmed"
+      "bookingNumber": "BK-251223-GRZF"
     }
   ]
 }
