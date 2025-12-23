@@ -81,17 +81,25 @@ body {
   background-color: #003366;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 8px 14px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%;
+  display: inline-block;
   margin-top: 10px;
 }
 
 .book-btn:hover {
   background-color: #0055aa;
+}
+
+.book-btn.small {
+  padding: 6px 12px;
+}
+
+.book-btn.danger {
+  background-color: #b00020;
 }
 
 .booking-form {

@@ -41,7 +41,7 @@ body {
             align-items: center;
             width: calc(100% - 10px);
 
-            a {
+            a, .nav-label {
                 flex: 0.1 auto;
                 text-align: center;
                 text-decoration: none;
@@ -50,16 +50,17 @@ body {
                 background-color: rgb(20, 20, 20);
                 border-right: 2px solid currentColor;
                 transition: background-color 0.2s ease;
+                color: rgb(255, 255, 255);
+            }
 
-                &:hover {
-                    background-color: rgb(75,75,75);
-                }
+            a:hover {
+                background-color: rgb(75,75,75);
+            }
 
-                &:last-child {
-                    border-top-right-radius: 10px;
-                    border-bottom-right-radius: 10px;
-                    border-right: 0px;
-                }
+            a:last-child, .nav-label:last-child {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-right: 0px;
             }
             
                 
