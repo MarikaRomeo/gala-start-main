@@ -180,21 +180,6 @@ body{
         border-radius: 3px;
     }
 
-    .eventMenu{
-        text-align: center;
-    }
-
-    .contenth4{
-        font-family: 'Georgia', serif; 
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        color: #4b2e1e; 
-        padding: 4px;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-    }
-
     #backToMainBtn.book-country-ticket-btn,
     #actionButton.book-country-ticket-btn{
         margin-left: 0;

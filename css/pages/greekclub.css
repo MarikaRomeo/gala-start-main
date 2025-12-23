@@ -17,24 +17,6 @@ body {
 }
 
 
-.greek-page nav {
-  background-color: #00264d; 
-  padding: 10px 0;
-}
-
-.greek-page nav a {
-  color: #e0f0ff; 
-  text-decoration: none; 
-  margin: 0 15px; 
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease; 
-}
-
-.greek-page nav a:hover {
-  color: #ffd700; 
-}
-
 /* === EVENT CONTAINER === */
 #events-container {
   display: grid; 
