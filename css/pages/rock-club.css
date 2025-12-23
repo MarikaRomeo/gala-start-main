@@ -46,9 +46,7 @@ body {
                 text-align: center;
                 text-decoration: none;
                 padding: 0.5rem 0;
-                border-bottom: 2px solid currentColor;
                 background-color: rgb(20, 20, 20);
-                border-right: 2px solid currentColor;
                 transition: background-color 0.2s ease;
                 color: rgb(255, 255, 255);
             }
@@ -59,7 +57,6 @@ body {
 
             a:last-child, .nav-label:last-child {
                 border-top-right-radius: 10px;
-                border-bottom-right-radius: 10px;
                 border-right: 0px;
             }
             
@@ -75,11 +72,6 @@ body {
         }
         article {
             text-align: center;
-            border-bottom: 1px solid rgb(194, 0, 0);
-
-            &:last-child {
-                border-bottom: 0px;
-            }
         }
         button {
             color: rgb(255, 255, 255);
@@ -90,12 +82,80 @@ body {
             margin-right: 10px;
             border-radius: 10px;
             transition: background-color 0.2s ease;
-
-            &:hover {
-                background-color: rgb(100, 100, 100);
-            }
         }
     }
+}
+
+.admin-toggle {
+    background: linear-gradient(90deg, #b30000, #ff0000);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    margin: 0.5rem;
+    min-width: 12rem;
+    min-height: 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.admin-toggle:hover {
+    transform: translateY(-1px);
+}
+
+.rock-actions .book-rock-btn,
+.admin-event-form .book-rock-btn {
+    background: linear-gradient(90deg, #b30000, #ff0000);
+    color: #fff;
+    border: 1px solid #ff0000;
+    margin-top: 1rem;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.rock-actions .book-rock-btn:hover,
+.admin-event-form .book-rock-btn:hover {
+    transform: translateY(-1px);
+}
+
+.admin-event-form {
+    background: #0f0f0f;
+    border: 1px solid red;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.admin-event-form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-weight: 600;
+    color: red;
+}
+
+.admin-event-form input[type="text"],
+.admin-event-form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1c1c1c;
+    color: #fff;
+}
+
+.admin-event-form .book-rock-btn {
+    margin-top: 10px;
+    width: 100%;
 }
 
 .booking-page {

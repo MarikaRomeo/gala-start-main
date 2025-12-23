@@ -30,6 +30,37 @@ h2 {
   color: #e8d6d1; 
 }
 
+/* ====== Admin Form ====== */
+.admin-event-form {
+  margin: 30px auto 10px;
+  max-width: 720px;
+  background: rgba(255, 218, 224, 0.08);
+  border: 1px solid rgba(255, 218, 224, 0.25);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.admin-event-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 500;
+  color: #ffdae0;
+  margin-bottom: 12px;
+}
+
+.admin-event-form input[type="text"],
+.admin-event-form input[type="datetime-local"] {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 218, 224, 0.4);
+  background-color: rgba(255, 218, 224, 0.08);
+  color: #fffdf8;
+  font-size: 0.95rem;
+}
+
 /* ====== NAV ====== */
 .italian-page nav {
   display: flex;

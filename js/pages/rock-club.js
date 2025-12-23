@@ -55,12 +55,11 @@ export default createPage({
         <div class="container">
           <div class="bar">
             <nav>
-              <a href="#home">Gala Emporium</a>
-              <span class="nav-label">Riktiga Rockare</span>
+              <a class="admin-toggle" href="#home">Tillbaka till huvudsidan</a>
+              <button class="admin-toggle" type="button" data-rock-admin>Admin</button>
             </nav>
           </div>
           <br>
-          <button class="book-rock-btn admin-toggle" type="button" data-rock-admin>Admin</button>
           <h2>Kommande Konserter</h2>
           <div class="eventContent">
             ${eventsMarkup || '<p class="loading">Nagonting gick fel!</p>'}

@@ -112,20 +112,34 @@ body{
     }
 
     .book-country-ticket-btn{
-        margin-right: 10px;
-        margin-bottom: 10px;
-        margin-left: auto;
-        display: block;
+        margin: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         padding: 12px 24px;
-        background-color: #9e7645;
+        background: linear-gradient(90deg, #9e7645, #b88954);
         color: #fff;
-        border: none;
-        border-radius: 6px;
+        border: 1px solid #7a4a22;
+        border-radius: 10px;
         font-size: 16px;
+        font-weight: 700;
         cursor: pointer;
-        transition: background-color 0.3s ease;
-        min-height: 25px;
-        min-width: 75px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+        min-height: 45px;
+        min-width: 160px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+        text-decoration: none;
+    }
+
+    .book-country-ticket-btn:hover {
+        background: linear-gradient(90deg, #b88954, #9e7645);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+
+    .book-country-ticket-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
 
     .delete-event-btn{
@@ -181,36 +195,11 @@ body{
         letter-spacing: 4px;
     }
 
-    #backToMainBtn{
-        padding: 12px 24px;
-        background-color: #9e7645;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        min-height: 50px;
-        min-width: 150px;
-        z-index: -1;
-    }
-
-    #backToMainBtn:hover {
-        background-color: #21867a;
-    }
-
-    #actionButton{
-        padding: 12px 24px;
-        background-color: #9e7645;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        min-height: 50px;
-        min-width: 150px;
-        Float: right;
+    #backToMainBtn.book-country-ticket-btn,
+    #actionButton.book-country-ticket-btn{
+        margin-left: 0;
+        margin-right: 0;
+        z-index: 1;
     }
 
     #skapaEventknapp{
@@ -229,5 +218,45 @@ body{
         min-width: 400px;
         flex-wrap: wrap;
         background: #CC5500;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+
+    .countryEventCreationForm h1 {
+        margin-top: 0;
+        color: #2b1a10;
+        text-align: center;
+    }
+
+    .countryEventCreationForm label {
+        font-weight: bold;
+        color: #2b1a10;
+    }
+
+    .countryEventCreationForm input[type="text"],
+    .countryEventCreationForm input[type="datetime-local"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #7a4a22;
+        background: #f6d4b4;
+        color: #2b1a10;
+        margin: 6px 0 12px;
+    }
+
+    .countryEventCreationForm #skapaEventKnapp,
+    .countryEventCreationForm input[type="submit"] {
+        width: 100%;
+        background: #9e7645;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .countryEventCreationForm input[type="submit"]:hover {
+        background: #7f5e37;
     }
 }

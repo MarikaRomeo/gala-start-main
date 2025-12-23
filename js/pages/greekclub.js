@@ -116,8 +116,8 @@ export default createPage({
           <p>${club?.description ?? 'Upplev Greklands musik, dans och kultur'}</p>
         </header>
         <div class="greek-actions">
-          <button class="book-btn" id="back-to-home">Tillbaka till startsidan</button>
-          <button class="book-btn small" type="button" data-greek-admin>Admin</button>
+          <button class="book-btn wide" id="back-to-home">Tillbaka till huvudsidan</button>
+          <button class="book-btn wide" type="button" data-greek-admin>Admin</button>
         </div>
         <main id="events-container">
           ${cards || '<p>Inga event hittades.</p>'}

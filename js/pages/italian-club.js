@@ -67,7 +67,7 @@ export default createPage({
         <h1>${headingTitle}</h1>
         <h2>${headingSubtitle}</h2>
         <div class="italian-actions">
-          <a class="gala-btn" href="#home">Gala Emporium</a>
+          <a class="gala-btn" href="#home">Tillbaka till huvudsidan</a>
           <button class="gala-btn" type="button" data-italian-admin>Admin</button>
         </div>
         <nav id="italian-events" aria-live="polite">
