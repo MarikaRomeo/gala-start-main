@@ -3,7 +3,7 @@ import { createPage, formatDateTime, getEvents, removeEvent, saveEvent } from '.
 
 const CLUB_ID = 'f8ed';
 
-function renderAdminForm() {
+function buildAdminForm() {
   return `
     <form class="admin-event-form" data-add-event>
       <label>Eventnamn <input type="text" name="name" required></label>
@@ -98,7 +98,7 @@ export default createPage({
       if (!eventContent) return;
       const events = await getEvents(CLUB_ID);
       const sorted = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
-      eventContent.innerHTML = buildEventMarkup(sorted, isAdminView) + (isAdminView ? renderAdminForm() : '');
+      eventContent.innerHTML = buildEventMarkup(sorted, isAdminView) + (isAdminView ? buildAdminForm() : '');
 
       if (isAdminView) {
         eventContent.querySelectorAll('[data-delete-event]').forEach((button) => {

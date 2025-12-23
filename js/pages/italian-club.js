@@ -13,7 +13,7 @@ const defaultHeading = {
   subtitle: 'Dina älskade italienska låtar',
 };
 
-function createEventCard(event, isAdminView) {
+function buildEventCard(event, isAdminView) {
   const formattedDate = formatDateTime(event.date);
   const bookingLabel = `${event.name} - ${formattedDate}`.trim();
   const actionButton = isAdminView
@@ -30,11 +30,11 @@ function createEventCard(event, isAdminView) {
   `;
 }
 
-function renderBookingHost() {
+function buildBookingHost() {
   return `<div class="booking-host" data-booking-host></div>`;
 }
 
-function renderAdminForm() {
+function buildAdminForm() {
   return `
     <form class="admin-event-form" data-add-event>
       <label>Eventnamn <input type="text" name="name" required></label>
@@ -59,7 +59,7 @@ export default createPage({
     const headingSubtitle = club?.description ?? defaultHeading.subtitle;
 
     const eventsMarkup = sortedEvents.length
-      ? sortedEvents.map((event) => createEventCard(event, false)).join('')
+      ? sortedEvents.map((event) => buildEventCard(event, false)).join('')
       : '<p class="loading">Inga evenemang att visa just nu.</p>';
 
     return `
@@ -73,7 +73,7 @@ export default createPage({
         <nav id="italian-events" aria-live="polite">
           ${eventsMarkup}
         </nav>
-        ${renderBookingHost()}
+        ${buildBookingHost()}
       </section>
     `;
   },
@@ -107,9 +107,9 @@ export default createPage({
       const events = await getEvents(CLUB_ID);
       const sorted = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
       const content = sorted.length
-        ? sorted.map((event) => createEventCard(event, isAdminView)).join('')
+        ? sorted.map((event) => buildEventCard(event, isAdminView)).join('')
         : '<p class="loading">Inga evenemang att visa just nu.</p>';
-      eventContainer.innerHTML = content + (isAdminView ? renderAdminForm() : '');
+      eventContainer.innerHTML = content + (isAdminView ? buildAdminForm() : '');
 
       if (isAdminView) {
         eventContainer.querySelectorAll('[data-delete-event]').forEach((button) => {

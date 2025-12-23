@@ -29,7 +29,7 @@ async function loadGreekEvents() {
   return events.map(normalizeEvent);
 }
 
-function createEventCard(event, isAdminView) {
+function buildEventCard(event, isAdminView) {
   const action = isAdminView
     ? `<button class="book-btn danger" data-delete-event="${event.id}">Ta bort event</button>`
     : `<button class="book-btn" data-book-greek="${event.id}">Boka biljett</button>`;
@@ -49,7 +49,7 @@ function createEventCard(event, isAdminView) {
   `;
 }
 
-function createInlineBooking(event) {
+function buildInlineBooking(event) {
   return `
     <div class="booking-form">
       <h3>Boka biljett for ${event.title}</h3>
@@ -87,7 +87,7 @@ async function submitGreekBooking(cardElement, event) {
   alert(`Tack ${name}! Din bokning for eventet "${event.title}" har registrerats.`);
 }
 
-function renderAdminForm() {
+function buildAdminForm() {
   return `
     <form class="admin-event-form" data-add-event>
       <label>Eventnamn <input type="text" name="title" required></label>
@@ -107,7 +107,7 @@ export default createPage({
   render: async () => {
     const [clubs, events] = await Promise.all([getClubs(), loadGreekEvents()]);
     const club = clubs.find((entry) => entry.id === CLUB_ID);
-    const cards = events.map((event) => createEventCard(event, false)).join('');
+    const cards = events.map((event) => buildEventCard(event, false)).join('');
 
     return `
       <section class="greek-page">
@@ -149,7 +149,7 @@ export default createPage({
             id: card.dataset.greekEvent,
             title: card.querySelector('h2')?.textContent ?? 'Greek Club Event',
           };
-          card.insertAdjacentHTML('beforeend', createInlineBooking(event));
+          card.insertAdjacentHTML('beforeend', buildInlineBooking(event));
           const confirmBtn = card.querySelector('[data-confirm-booking]');
           confirmBtn?.addEventListener('click', async () => {
             try {
@@ -175,8 +175,8 @@ export default createPage({
     const refreshEvents = async () => {
       if (!eventsContainer) return;
       const events = await loadGreekEvents();
-      const cards = events.map((event) => createEventCard(event, isAdminView)).join('');
-      eventsContainer.innerHTML = cards + (isAdminView ? renderAdminForm() : '');
+      const cards = events.map((event) => buildEventCard(event, isAdminView)).join('');
+      eventsContainer.innerHTML = cards + (isAdminView ? buildAdminForm() : '');
 
       if (isAdminView) {
         eventsContainer.querySelectorAll('[data-delete-event]').forEach((button) => {
