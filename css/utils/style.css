@@ -1,10 +1,4 @@
 @import '/css/utils/setup-box-sizing.css';
-@import '/css/pages/country-club.css';
-/*@import '/css/pages/techno.css';*/
-/*@import '/css/pages/greekclub.css';*/
-@import '/css/pages/rock-club.css';
-@import '/css/pages/start-page.css';
-/*@import '/css/pages/italian-club.css';*/
 
 /* ====== Font Import ====== */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;400;500&family=Marcellus+SC&display=swap');
@@ -16,9 +10,18 @@
   box-sizing: border-box;
 }
 
+body.app-shell {
+  margin: 0;
+  min-height: 100vh;
+}
+
+main#app {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* ====== Base ====== */
-html,
-body {
+body.page-home {
   font-family: 'Cormorant Garamond', serif;
   background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
   color: #f2e9dc;
@@ -34,8 +37,8 @@ body {
 }
 
 /* ====== Decorative Borders ====== */
-body::before,
-body::after {
+body.page-home::before,
+body.page-home::after {
   content: "";
   position: fixed;
   width: 100%;
@@ -51,7 +54,7 @@ body::after {
 }
 
 /* ====== Headings ====== */
-h1 {
+body.page-home h1 {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 700;
   font-size: 3.5rem;
@@ -66,7 +69,7 @@ h1 {
 }
 
 /* Art Deco accent lines under H1 */
-h1::after {
+body.page-home h1::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -78,7 +81,7 @@ h1::after {
   box-shadow: 0 0 10px rgba(255, 204, 51, 0.3);
 }
 
-h2 {
+body.page-home h2 {
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
   font-size: 1.4rem;
@@ -89,7 +92,7 @@ h2 {
   position: relative;
 }
 
-h2::after {
+body.page-home h2::after {
   content: "";
   position: absolute;
   bottom: -6px;
@@ -102,7 +105,7 @@ h2::after {
 }
 
 /* ====== Header / Navigation ====== */
-header {
+.app-header {
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid rgba(255, 215, 100, 0.15);
@@ -113,7 +116,7 @@ header {
   z-index: 5;
 }
 
-nav ul {
+.app-header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -121,7 +124,7 @@ nav ul {
   gap: 1.5rem;
 }
 
-nav a {
+.app-header nav a {
   font-family: 'Marcellus SC', serif;
   color: #f6b93b;
   text-decoration: none;
@@ -134,15 +137,58 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a:hover {
+.app-header nav a:hover {
   background: rgba(246, 185, 59, 0.1);
   border-color: #f6b93b;
   color: #fff8e7;
   transform: scale(1.07);
 }
 
+.app-header nav a.is-active {
+  background: rgba(246, 185, 59, 0.2);
+  border-color: #f6b93b;
+  color: #fff;
+}
+
+body.app-shell {
+  min-height: 100vh;
+}
+
+body.page-full main {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+}
+
+.booking-host {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking-close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
 /* ====== Main ====== */
-main {
+body.page-home main {
   flex: 1;
   max-width: 850px;
   padding: 2.5rem;
@@ -152,7 +198,8 @@ main {
 }
 
 /* ====== Cards / Event Sections ====== */
-.pet, .event {
+body.page-home .pet,
+body.page-home .event {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 215, 100, 0.15);
   border-radius: 12px;
@@ -165,8 +212,8 @@ main {
 }
 
 /* Art Deco corner lines */
-.pet::before, .event::before,
-.pet::after, .event::after {
+body.page-home .pet::before, body.page-home .event::before,
+body.page-home .pet::after, body.page-home .event::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -176,26 +223,26 @@ main {
   transition: all 0.3s ease;
 }
 
-.pet::before, .event::before {
+body.page-home .pet::before, body.page-home .event::before {
   top: 10px;
   left: 10px;
   border-right: none;
   border-bottom: none;
 }
 
-.pet::after, .event::after {
+body.page-home .pet::after, body.page-home .event::after {
   bottom: 10px;
   right: 10px;
   border-left: none;
   border-top: none;
 }
 
-.pet:hover::before, .event:hover::before,
-.pet:hover::after, .event:hover::after {
+body.page-home .pet:hover::before, body.page-home .event:hover::before,
+body.page-home .pet:hover::after, body.page-home .event:hover::after {
   opacity: 0.6;
 }
 
-.pet:hover, .event:hover {
+body.page-home .pet:hover, body.page-home .event:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 25px rgba(255, 204, 51, 0.15);
 }

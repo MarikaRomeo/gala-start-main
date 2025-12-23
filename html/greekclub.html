@@ -4,27 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Greek Club</title>
-  <link rel="stylesheet" href="/css/pages/greekclub.css">
+  <link rel="stylesheet" href="/css/utils/style.css" data-base-style>
 </head>
-<body>
-  <header>
-    <h1>Greek Club</h1>
-    <p>Upplev Greklands musik, dans och kultur</p>
-
-    
+<body data-initial-route="greek">
+  <header class="app-header">
+    <nav id="main-nav" data-nav></nav>
   </header>
-
-  <main id="events-container">
-    <!-- Här kommer evenemang att visas dynamiskt -->
-  </main>
-
-  <footer>
-    <p>© 2025 Greek Club - Gala Emporium</p>
-  </footer>
-
-  <script src="/js/pages/greekclub.js"></script>
-
-  <button id="back-to-home">Tillbaka till startsidan</button>
-
+  <main id="app" role="main"></main>
+  <footer></footer>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

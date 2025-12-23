@@ -31,7 +31,7 @@ h2 {
 }
 
 /* ====== NAV ====== */
-nav {
+.italian-page nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -39,7 +39,7 @@ nav {
   padding: 40px;
 }
 
-nav a {
+.italian-page nav a {
   color: #ffdae0;
   text-decoration: none;
   font-weight: 500;
@@ -48,7 +48,7 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a:hover {
+.italian-page nav a:hover {
   background-color: rgba(255, 218, 224, 0.2);
   color: #fff;
 }
@@ -115,7 +115,8 @@ img {
 }
 
 /* ====== Booking Page ====== */
-body.booking-page {
+body.booking-page,
+.booking-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -206,7 +207,7 @@ body.booking-page {
     width: 90%;
   }
 
-  nav {
+  .italian-page nav {
     padding: 20px;
     gap: 10px;
   }

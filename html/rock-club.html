@@ -4,30 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/pages/rock-club.css">
+    <title>Riktiga Rockare</title>
+    <link rel="stylesheet" href="/css/utils/style.css" data-base-style>
 </head>
 
-<body>
-    <header>
-        <h1>Riktiga Rockare</h1>
-        <h3>Hårdrock för Riktiga Rockare™!</h3>
+<body data-initial-route="rock">
+    <header class="app-header">
+        <nav id="main-nav" data-nav></nav>
     </header>
-    <div class="container">
-        <div class="bar">
-            <nav>
-                <a href="index.html">Gala Emporium</a>
-                <!--<a href="booking-form-rock.html">Boka biljett</a>-->
-                <a href="create-club.html">Skapa event (Admin)</a>
-            </nav>
-        </div>
-        <br>
-        <h2>Kommande Konserter</h2>
-        <div class="eventContent"></div>
-
-    </div>
-    <script type="module" src="../js/pages/rock-club.js"></script>
-    <script type="module" src="../html/booking-form-rock.html"></script>
+    <main id="app" role="main"></main>
+    <footer></footer>
+    <script type="module" src="../js/main.js"></script>
 </body>
 
 </html>

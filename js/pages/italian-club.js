@@ -1,125 +1,86 @@
-(() => {
-    const API_URL = 'http://localhost:3000';
-    const FALLBACK = './json/db.json';
-    const CLUB_ID = 'it01';
+import { bindBookingForm, renderBookingForm } from '../utils/booking.js';
+import { createPage, formatDateTime, getClubs, getEvents } from '../utils/data-service.js';
 
-    //Getting data from json.db
-    async function getData(type) {
-        try {
-            const response = await fetch(`${API_URL}/${type}`);
-            if (!response.ok) {
-                throw new Error('Remote fetch failed');
-            }
-            return await response.json();
-        } catch (error) {
-            const localResponse = await fetch(FALLBACK);
-            const json = await localResponse.json();
-            return json[type];
-        }
-    }
+const CLUB_ID = 'it01';
 
-    // formatting date to look presentable for the user 
-    function formatDate(dateString) {
-        if (!dateString) {
-            return '';
-        }
-        const isoString = dateString.replace(' ', 'T');
-        const parsedDate = new Date(isoString);
-        if (Number.isNaN(parsedDate.getTime())) {
-            return dateString;
-        }
-        const datePart = parsedDate.toLocaleDateString('sv-SE', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
-        const timePart = parsedDate.toLocaleTimeString('sv-SE', {
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-        return `${datePart} kl ${timePart}`;
-    }
+const styles = [
+  'https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap',
+  '/css/pages/italian-club.css',
+];
 
-    // open the booking form
-    const openBookingWindow = (eventTitle = 'Italian Club Experience') => {
-        const baseUrl = new URL('booking-form.html', window.location.href);
-        baseUrl.searchParams.set('event', eventTitle);
-        window.open(
-            baseUrl.toString(),
-            'italianClubBooking',
-            'width=520,height=640,menubar=no,toolbar=no,location=no,status=no'
-        );
+const defaultHeading = {
+  title: 'Radio Italia - Solo Musica Italiana',
+  subtitle: 'Dina älskade italienska låtar',
+};
+
+function createEventCard(event) {
+  const formattedDate = formatDateTime(event.date);
+  const bookingLabel = `${event.name} - ${formattedDate}`.trim();
+  return `
+    <div class="club">
+      <h2>${event.name}</h2>
+      <p>${event.description ?? ''}</p>
+      <h4>${formattedDate}</h4>
+      ${event.image ? `<img src="${event.image}" alt="${event.name}">` : ''}
+      <button class="book-btn" data-book-event="${bookingLabel}">Book Now</button>
+    </div>
+  `;
+}
+
+function renderBookingHost() {
+  return `<div class="booking-host" data-booking-host></div>`;
+}
+
+export default createPage({
+  id: 'italian',
+  label: 'Radio Italia',
+  navLabel: 'Radio Italia',
+  styles,
+  render: async () => {
+    const [clubs, events] = await Promise.all([getClubs(), getEvents(CLUB_ID)]);
+    const club = clubs.find((entry) => entry.id === CLUB_ID);
+    const sortedEvents = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const headingTitle = club?.name ?? defaultHeading.title;
+    const headingSubtitle = club?.description ?? defaultHeading.subtitle;
+
+    const eventsMarkup = sortedEvents.length
+      ? sortedEvents.map(createEventCard).join('')
+      : '<p class="loading">Inga evenemang att visa just nu.</p>';
+
+    return `
+      <section class="italian-page">
+        <h1>${headingTitle}</h1>
+        <h2>${headingSubtitle}</h2>
+        <div class="italian-actions">
+          <a class="gala-btn" href="#home">Gala Emporium</a>
+          <a href="#create" class="gala-btn">Skapa event (Admin)</a>
+        </div>
+        <nav id="italian-events" aria-live="polite">
+          ${eventsMarkup}
+        </nav>
+        ${renderBookingHost()}
+      </section>
+    `;
+  },
+  bind: (container) => {
+    const bookingHost = container.querySelector('[data-booking-host]');
+    const clearBookingHost = () => {
+      if (bookingHost) {
+        bookingHost.innerHTML = '';
+      }
     };
 
-    // create the event card from the json.db
-    function createEventCard(event) {
-        const card = document.createElement('div');
-        card.className = 'club';
-        const formattedDate = formatDate(event.date);
-        card.innerHTML = `
-            <h2>${event.name}</h2>
-            <p>${event.description || ''}</p>
-            <h4>${formattedDate}</h4>
-            ${event.image ? `<img src="${event.image}" alt="${event.name}">` : ''}
-            <button class="book-btn">Book Now</button>
-        `;
-        const button = card.querySelector('.book-btn');
-        const bookingLabel = `${event.name} - ${formattedDate}`.trim();
-        button.dataset.event = bookingLabel;
-        button.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            openBookingWindow(bookingLabel);
-        });
-        return card;
-    }
-
-    // load the events on the page
-    function renderEvents(container, events) {
-        container.innerHTML = '';
-        if (!events.length) {
-            container.innerHTML = '<p class="loading">Inga evenemang att visa just nu.</p>';
-            return;
+    container.querySelectorAll('[data-book-event]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!bookingHost) {
+          return;
         }
-        const sortedEvents = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
-        sortedEvents.forEach((event) => {
-            container.appendChild(createEventCard(event));
-        });
-    }
-
-    function updateHeadingTexts(club) {
-        if (!club) {
-            return;
-        }
-        const title = document.querySelector('h1');
-        const subtitle = document.querySelector('h2');
-        if (club.name && title) {
-            title.textContent = club.name;
-        }
-        if (club.description && subtitle) {
-            subtitle.textContent = club.description;
-        }
-    }
-
-    //start the italian web page
-    async function initItalianClub() {
-        const container = document.getElementById('italian-events');
-        if (!container) {
-            return;
-        }
-        try {
-            const [clubs, events] = await Promise.all([
-                getData('clubs'),
-                getData('events')
-            ]);
-            const club = clubs.find((entry) => entry.id === CLUB_ID);
-            const clubEvents = events.filter((event) => event.clubId === CLUB_ID);
-            updateHeadingTexts(club);
-            renderEvents(container, clubEvents);
-        } catch (error) {
-            console.error('Kunde inte ladda italienska klubben', error);
-            container.innerHTML = '<p class="loading">Kunde inte ladda evenemang just nu.</p>';
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', initItalianClub);
-})();
+        bookingHost.innerHTML = '';
+        const bookingElement = renderBookingForm(button.dataset.bookEvent ?? 'Italian Club Experience');
+        bookingHost.appendChild(bookingElement);
+        bindBookingForm(bookingElement, button.dataset.bookEvent ?? 'Italian Club Experience', clearBookingHost);
+      });
+    });
+  },
+});

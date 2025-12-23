@@ -1,40 +1,17 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" href="/css/pages/country-club.css" />
-</head>
 <html lang="en">
-<body>
-<div id="countryContainer">
-  <div class="buttonContainer">
-    <!-- Knapp för att ta sig till startsidan -->
-    <button id="backToMainBtn" title="Hemknapp" onClick="(function(){
-        window.location.href = 'index.html';
-        return false;
-        })();return false;">
-      Tillbaka till startsidan
-    </button>
-    <button id="actionButton"> 
-      Admin
-    </button>
-  </div>
-
-<div class="container">
-
-  <div class="mainContainer">
-    <div class="main2">
-      <h4 class="headMenu">Country Klubben</h4>
-      <p class="headText">Välkommen till Country klubben!<br> Här spelar vi countrymusik från hela världen.</p>
-    </div>
-
-    <div class="content">
-      <div class="upcomingEvents"><h4>Kommande evenemang</h4></div>
-        <div class="eventContent"><h4 class="contenth4">Gareth</h4></div>
-      </div>
-    </div>
-  </div>
-
-</div> 
-</div>
-  <script src="/js/pages/country-club.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Club</title>
+  <link rel="stylesheet" href="/css/utils/style.css" data-base-style>
+</head>
+<body data-initial-route="country">
+  <header class="app-header">
+    <nav id="main-nav" data-nav></nav>
+  </header>
+  <main id="app" role="main"></main>
+  <footer></footer>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

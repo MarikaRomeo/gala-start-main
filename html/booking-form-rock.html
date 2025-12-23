@@ -4,38 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riktiga rockare Club Booking</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/css/pages/rock-club.css">
+    <title>Riktiga Rockare</title>
+    <link rel="stylesheet" href="/css/utils/style.css" data-base-style>
 </head>
 
-
-<body class="booking-page">
-    <main class="booking-card">
-        <h1 id="eventTitle">Book your tickets</h1>
-        <form id="bookingForm" class="booking-form" novalidate>
-            <label>
-                Event
-                <input id="eventName" name="event" type="text" readonly>
-            </label><br>
-            <label>
-                Full name
-                <input id="fullName" name="name" type="text" required>
-            </label><br>
-            <label>
-                Email
-                <input id="email" name="email" type="email" required>
-            </label><br>
-            <label>
-                Number of tickets
-                <input id="tickets" name="tickets" type="number" min="1" max="10" value="1" required>
-            </label>
-            <div class="booking-error" id="formError" role="alert"></div>
-            <button type="submit" class="booking-submit">Save</button>
-        </form>
-    </main>
-    <script src="/js/utils/booking-form-rock.js"></script>
+<body data-initial-route="home">
+    <header class="app-header">
+        <nav id="main-nav" data-nav></nav>
+    </header>
+    <main id="app" role="main"></main>
+    <footer></footer>
+    <script type="module" src="../js/main.js"></script>
 </body>
 
 </html>

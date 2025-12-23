@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/pages/create-club.css">
+    <title>Skapa event</title>
+    <link rel="stylesheet" href="/css/utils/style.css" data-base-style>
 </head>
-<body>
-    <h2>Skapa event</h2>
-    <form id="create-club">
-      <input name="eventName"   placeholder="Eventnamn">
-      <input name="clubID"      placeholder="KlubbID: XXXX">
-      <input name="eventDate"   placeholder="När är eventet?" type="date">
-
-      <textarea name="eventDescription" placeholder="Beskrivning av eventet"></textarea>
-
-      <input type="submit" value="Skapa"> 
-    </form>
-    <script type="module" src="../js/utils/create-club.js"></script>
-
+<body data-initial-route="create">
+    <header class="app-header">
+        <nav id="main-nav" data-nav></nav>
+    </header>
+    <main id="app" role="main"></main>
+    <footer></footer>
+    <script type="module" src="../js/main.js"></script>
 </body>
 </html>

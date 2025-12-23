@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-header {
+.greek-page header {
   background-color: #003366; 
   color: white; 
   text-align: center; 
@@ -17,12 +17,12 @@ header {
 }
 
 
-nav {
+.greek-page nav {
   background-color: #00264d; 
   padding: 10px 0;
 }
 
-nav a {
+.greek-page nav a {
   color: #e0f0ff; 
   text-decoration: none; 
   margin: 0 15px; 
@@ -31,7 +31,7 @@ nav a {
   transition: color 0.3s ease; 
 }
 
-nav a:hover {
+.greek-page nav a:hover {
   color: #ffd700; 
 }
 
