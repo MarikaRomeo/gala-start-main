@@ -1,4 +1,4 @@
-import { createPage, formatDateTime, getClubs, getEvents, saveBooking } from '../utils/data-service.js';
+import { createPage, formatDateTime, getClubs, getEvents, removeEvent, saveBooking, saveEvent } from '../utils/data-service.js';
 
 const CLUB_ID = 'gr01';
 const styles = ['/css/pages/greekclub.css'];
@@ -29,7 +29,10 @@ async function loadGreekEvents() {
   return events.map(normalizeEvent);
 }
 
-function createEventCard(event) {
+function createEventCard(event, isAdminView) {
+  const action = isAdminView
+    ? `<button class="book-btn danger" data-delete-event="${event.id}">Ta bort event</button>`
+    : `<button class="book-btn" data-book-greek="${event.id}">Boka biljett</button>`;
   return `
     <div class="event-card" data-greek-event="${event.id}">
       <img src="${event.image}" alt="${event.title}">
@@ -39,7 +42,9 @@ function createEventCard(event) {
       <p><strong>Plats:</strong> ${event.location}</p>
       <p><strong>Pris:</strong> ${event.price}</p>
       <p>${event.description}</p>
-      <button class="book-btn" data-book-greek="${event.id}">Boka biljett</button>
+      <div class="greek-actions">
+        ${action}
+      </div>
     </div>
   `;
 }
@@ -82,6 +87,17 @@ async function submitGreekBooking(cardElement, event) {
   alert(`Tack ${name}! Din bokning for eventet "${event.title}" har registrerats.`);
 }
 
+function renderAdminForm() {
+  return `
+    <form class="admin-event-form" data-add-event>
+      <label>Eventnamn <input type="text" name="title" required></label>
+      <label>Datum <input type="datetime-local" name="date" required></label>
+      <label>Beskrivning <input type="text" name="description"></label>
+      <input type="submit" value="Skapa" class="book-btn">
+    </form>
+  `;
+}
+
 export default createPage({
   id: 'greek',
   label: 'Greek Club',
@@ -91,7 +107,7 @@ export default createPage({
   render: async () => {
     const [clubs, events] = await Promise.all([getClubs(), loadGreekEvents()]);
     const club = clubs.find((entry) => entry.id === CLUB_ID);
-    const cards = events.map(createEventCard).join('');
+    const cards = events.map((event) => createEventCard(event, false)).join('');
 
     return `
       <section class="greek-page">
@@ -99,57 +115,114 @@ export default createPage({
           <h1>${club?.name ?? 'Greek Club'}</h1>
           <p>${club?.description ?? 'Upplev Greklands musik, dans och kultur'}</p>
         </header>
+        <div class="greek-actions">
+          <button class="book-btn" id="back-to-home">Tillbaka till startsidan</button>
+          <button class="book-btn small" type="button" data-greek-admin>Admin</button>
+        </div>
         <main id="events-container">
           ${cards || '<p>Inga event hittades.</p>'}
         </main>
         <footer>
           <p>Ac 2025 Greek Club - Gala Emporium</p>
         </footer>
-        <button id="back-to-home">Tillbaka till startsidan</button>
       </section>
     `;
   },
   bind: (container) => {
-    const cards = container.querySelectorAll('[data-greek-event]');
+    let isAdminView = false;
+    const backButton = container.querySelector('#back-to-home');
+    const adminButton = container.querySelector('[data-greek-admin]');
+    const eventsContainer = container.querySelector('#events-container');
 
-    cards.forEach((card) => {
-      const bookButton = card.querySelector('[data-book-greek]');
-      if (!bookButton) {
-        return;
-      }
-      bookButton.addEventListener('click', () => {
-        if (card.querySelector('.booking-form')) {
+    const wireBookings = () => {
+      const cards = container.querySelectorAll('[data-greek-event]');
+      cards.forEach((card) => {
+        const bookButton = card.querySelector('[data-book-greek]');
+        if (!bookButton) {
           return;
         }
-        const event = {
-          id: card.dataset.greekEvent,
-          title: card.querySelector('h2')?.textContent ?? 'Greek Club Event',
-        };
-        card.insertAdjacentHTML('beforeend', createInlineBooking(event));
-        const confirmBtn = card.querySelector('[data-confirm-booking]');
-        confirmBtn?.addEventListener('click', async () => {
-          try {
-            await submitGreekBooking(card, event);
-            const form = card.querySelector('.booking-form');
-            form?.remove();
-            const confirmation = document.createElement('p');
-            confirmation.textContent = 'Din bokning har registrerats!';
-            confirmation.style.color = 'green';
-            confirmation.style.fontWeight = 'bold';
-            confirmation.style.marginTop = '10px';
-            card.appendChild(confirmation);
-            setTimeout(() => confirmation.remove(), 6000);
-          } catch (error) {
-            console.error('Fel vid bokning', error);
-            alert('Ett fel uppstod vid bokningen. Forsok igen senare.');
+        bookButton.addEventListener('click', () => {
+          if (card.querySelector('.booking-form')) {
+            return;
           }
+          const event = {
+            id: card.dataset.greekEvent,
+            title: card.querySelector('h2')?.textContent ?? 'Greek Club Event',
+          };
+          card.insertAdjacentHTML('beforeend', createInlineBooking(event));
+          const confirmBtn = card.querySelector('[data-confirm-booking]');
+          confirmBtn?.addEventListener('click', async () => {
+            try {
+              await submitGreekBooking(card, event);
+              const form = card.querySelector('.booking-form');
+              form?.remove();
+              const confirmation = document.createElement('p');
+              confirmation.textContent = 'Din bokning har registrerats!';
+              confirmation.style.color = 'green';
+              confirmation.style.fontWeight = 'bold';
+              confirmation.style.marginTop = '10px';
+              card.appendChild(confirmation);
+              setTimeout(() => confirmation.remove(), 6000);
+            } catch (error) {
+              console.error('Fel vid bokning', error);
+              alert('Ett fel uppstod vid bokningen. Forsok igen senare.');
+            }
+          });
         });
       });
+    };
+
+    const refreshEvents = async () => {
+      if (!eventsContainer) return;
+      const events = await loadGreekEvents();
+      const cards = events.map((event) => createEventCard(event, isAdminView)).join('');
+      eventsContainer.innerHTML = cards + (isAdminView ? renderAdminForm() : '');
+
+      if (isAdminView) {
+        eventsContainer.querySelectorAll('[data-delete-event]').forEach((button) => {
+          button.addEventListener('click', async () => {
+            try {
+              await removeEvent(button.dataset.deleteEvent);
+              await refreshEvents();
+            } catch (error) {
+              console.error('Kunde inte ta bort event', error);
+              alert('Kunde inte ta bort eventet just nu.');
+            }
+          });
+        });
+
+        const form = eventsContainer.querySelector('[data-add-event]');
+        form?.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const newEvent = { clubId: CLUB_ID };
+          formData.forEach((value, key) => {
+            newEvent[key] = value;
+          });
+          try {
+            await saveEvent(newEvent);
+            form.reset();
+            await refreshEvents();
+          } catch (error) {
+            console.error('Kunde inte skapa event', error);
+            alert('Kunde inte skapa event just nu.');
+          }
+        });
+      } else {
+        wireBookings();
+      }
+    };
+
+    adminButton?.addEventListener('click', async () => {
+      isAdminView = !isAdminView;
+      adminButton.textContent = isAdminView ? 'Logout' : 'Admin';
+      await refreshEvents();
     });
 
-    const backButton = container.querySelector('#back-to-home');
     backButton?.addEventListener('click', () => {
       window.location.hash = '#home';
     });
+
+    wireBookings();
   },
 });

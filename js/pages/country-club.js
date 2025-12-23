@@ -92,8 +92,8 @@ export default createPage({
     return `
       <div id="countryContainer">
         <div class="buttonContainer">
-          <button id="backToMainBtn" title="Hemknapp">Tillbaka till startsidan</button>
-          <button id="actionButton">Admin</button>
+          <button id="backToMainBtn" class="book-country-ticket-btn" title="Hemknapp">Tillbaka till startsidan</button>
+          <button id="actionButton" class="book-country-ticket-btn">Admin</button>
         </div>
         <div class="container">
           <div class="mainContainer">
