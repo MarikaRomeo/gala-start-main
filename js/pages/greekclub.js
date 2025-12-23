@@ -26,12 +26,7 @@ function normalizeEvent(event) {
 
 async function loadGreekEvents() {
   const events = await getEvents(CLUB_ID);
-  if (events.length) {
-    return events.map(normalizeEvent);
-  }
-  const response = await fetch('/greekclub/json/events.json');
-  const data = await response.json();
-  return (data.events ?? []).map(normalizeEvent);
+  return events.map(normalizeEvent);
 }
 
 function createEventCard(event) {

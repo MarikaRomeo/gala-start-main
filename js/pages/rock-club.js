@@ -11,8 +11,7 @@ export default createPage({
   bodyClass: 'page-full',
   render: async () => {
     const events = await getEvents(CLUB_ID);
-    const filtered = events.filter((event) => Number.isNaN(Number.parseInt(event.id, 10)));
-    const sortedEvents = [...filtered].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const sortedEvents = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
 
     const eventsMarkup = sortedEvents
       .map((event) => {
