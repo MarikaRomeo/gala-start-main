@@ -85,7 +85,6 @@ h2 {
 }
 
 .gala-btn {
-  margin-top: 16px;
   padding: 12px 28px;
   border: none;
   border-radius: 999px;
@@ -95,10 +94,17 @@ h2 {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  text-decoration: none;        /* ← IMPORTANTE per togliere la sottolineatura */
-  display: inline-block;        /* ← Per far comportare <a> come un bottone */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
 }
 
+.gala-btn:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(255, 218, 224, 0.4);
+}
 
 .club {
   background-color: rgba(199, 82, 102, 0.15); 
