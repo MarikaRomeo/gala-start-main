@@ -1,5 +1,5 @@
 const API_URL = 'http://localhost:3000';
-const FALLBACK_URL = '/json/db.json';
+const FALLBACK_URLS = ['/json/db.json', '../json/db.json', './json/db.json'];
 
 async function fetchCollection(name) {
   try {
@@ -9,9 +9,20 @@ async function fetchCollection(name) {
     }
     return await response.json();
   } catch (error) {
-    const fallback = await fetch(FALLBACK_URL);
-    const json = await fallback.json();
-    return json[name] ?? [];
+    for (const url of FALLBACK_URLS) {
+      try {
+        const fallback = await fetch(url);
+        if (!fallback.ok) {
+          continue;
+        }
+        const json = await fallback.json();
+        return json[name] ?? [];
+      } catch {
+        // try next fallback
+      }
+    }
+    console.error(`Could not load ${name} from API or fallback`, error);
+    return [];
   }
 }
 
